@@ -10,17 +10,17 @@ available software
 
 how to build
 ------------
-`docker build --rm -t biodckr/htslib 1.2.1/.`
+`docker build --rm -t biodckrdev/htslib 1.2.1/.`
 
 
 how to download and install
 ---------------------------
-`docker pull biodckr/htslib`
+`docker pull biodckrdev/htslib`
 
 
 how to use
 ------------
-`docker run --rm biodckr/htslib <options> <files>`
+`docker run --rm biodckrdev/htslib <options> <files>`
 
 
 software website

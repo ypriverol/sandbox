@@ -1,108 +1,162 @@
-FROM centos:6
-MAINTAINER Steven N Hart, PhD
-#docker run -it -v /Users/m087494/Desktop/Docker/Data:/home/Data stevenhart/bior_annotate:latest
+#################################################################
+# Dockerfile
+#
+# Version:          1
+# Software:         BioR annotate
+# Software Version: 2.1.1
+# Base Image:       biodckrdev/bior_annotate
+# Build Cmd:        docker build --rm -t biodckrdev/bior_annotate 2.1.1/.
+# Pull Cmd:         docker pull biodckrdev/bior_annotate
+# Run Cmd:          docker run --rm -it biodckrdev/bior_annotate bash
+#################################################################
 
-RUN yum update -y && \
-    yum install -y \
-	autoconf \
-	automake \
-	bzip2 \
-	cpan \
-	finger \
-	gcc \
-	gcc-c++ \
-	git \
-	java-1.7.0-openjdk \
-	java-1.7.0-openjdk-devel \
-	kernel-devel \
-	make \
-	ncurses-devel \
-	ncurses \
-	python-devel \
-	tar \
-	unzip \
-	which \
-	wget \
-	zlib-devel 
+# Set the base image to Ubuntu
+FROM biodckr/biodocker:latest
+
+################## BEGIN INSTALLATION ######################
+
+#####################################################
+# Install system wide libraries
+#####################################################
+USER root
+
+RUN apt-get update && \
+    apt-get install -y \
+      libncurses5-dev \
+      libncursesw5-dev && \
+    apt-get clean && \
+    apt-get purge && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
 #####################################################
 # Install htslib
 #####################################################
-RUN git clone https://github.com/samtools/htslib.git && \
-    cd htslib && \
+RUN ZIP=htslib-1.2.1.tar.bz2 && \
+    FOLDER=htslib-1.2.1 && \
+    DST=/tmp && \
+    wget https://github.com/BioDocker/software-archive/releases/download/htslib/$ZIP -O $DST/$ZIP && \
+    tar xvf $DST/$ZIP -C $DST && \
+    rm $DST/$ZIP && \
+    cd $DST/$FOLDER && \
     make && \
-    make install
-
-#####################################################
-# Install BIOR
-#####################################################
-ENV PATH=$PATH:/bior_2.1.1/bin
-
-ENV BIOR_LITE_HOME=/bior_2.1.1
-
-RUN cd / && \
-    wget https://s3-us-west-2.amazonaws.com/mayo-bic-tools/bior/bior_2.1.1.tar.gz && \
-    tar xvzf bior_2.1.1.tar.gz && \
-    rm -f bior_2.1.1.tar.gz && \
-    echo "export BIOR_LITE_HOME=/bior_2.1.1" > bior_2.1.1/PKG_PROFILE
-
-
+    make install && \
+    cd / && \
+    rm -rf $DST/$FOLDER
 
 
 #####################################################
 # Install SAMtools
 #####################################################
-RUN cd / && \
-    git clone https://github.com/samtools/samtools.git && \
-    cd samtools && make && make install && \
-    cd /
+RUN ZIP=samtools-1.2.tar.bz2 && \
+    FOLDER=samtools-1.2 && \
+    DST=/tmp && \
+    wget https://github.com/BioDocker/software-archive/releases/download/samtools/$ZIP -O $DST/$ZIP && \
+    tar xvf $DST/$ZIP -C $DST && \
+    rm $DST/$ZIP && \
+    cd $DST/$FOLDER && \
+    make && \
+    make install && \
+    cd / && \
+    rm -rf $DST/$FOLDER
 
-ENV PATH=$PATH:/samtools/
+
+#####################################################
+# Get BEDtools
+#####################################################
+RUN ZIP=bedtools-2.25.0.tar.gz && \
+    FOLDER=bedtools2 && \
+    DST=/tmp && \
+    wget https://github.com/arq5x/bedtools2/releases/download/v2.25.0/$ZIP -O $DST/$ZIP && \
+    tar xvf $DST/$ZIP -C $DST && \
+    rm $DST/$ZIP && \
+    cd $DST/$FOLDER && \
+    make && \
+    make install && \
+    cd / && \
+    rm -rf $DST/$FOLDER
+
+
+#####################################################
+# Install SNPEFF
+#####################################################
+USER biodocker
+
+RUN ZIP=snpEff_v4_1k_core.zip && \
+    FOLDER=snpEff && \
+    DST=/home/biodocker/bin && \
+    wget https://github.com/BioDocker/software-archive/releases/download/snpEff/$ZIP -O $DST/$ZIP && \
+    unzip $DST/$ZIP -d $DST && \
+    rm $DST/$ZIP && \
+    bash -c 'echo -e "#!/bin/bash\njava -jar '$DST/$FOLDER'/snpEff.jar  \$@" > '$DST'/snpeff' && \
+    chmod +x $DST/snpeff && \
+    bash -c 'echo -e "#!/bin/bash\njava -jar '$DST/$FOLDER'/SnpSift.jar \$@" > '$DST'/snpsift' && \
+    chmod +x $DST/snpsift
+
+ENV PATH=$PATH:/home/biodocker/bin/snpEff/scripts:/home/biodocker/bin/snpEff/scripts/gsa
 
 
 #####################################################
 # Install perl modules
 #####################################################
+USER root
+
 RUN cpan -i Data::Dumper Getopt::Long List::MoreUtils Switch 
 
 
 #####################################################
 # Install Cava
 #####################################################
-RUN wget https://pypi.python.org/packages/source/p/pysam/pysam-0.8.3.tar.gz#md5=b1ae2a8ec3c6d20be30b2bc1aa995bbf && \
-    wget https://bootstrap.pypa.io/ez_setup.py -O - | python && \
-    tar xvzf pysam-0.8.3.tar.gz && \
-    cd pysam-0.8.3 && \
-    python setup.py build && \
-    python setup.py install && \
+RUN pip install pysam==0.8.3
+
+# Change user to back to biodocker
+USER biodocker
+
+RUN ZIP=cava-full-v1.1.1.tgz && \
+    FOLDER=cava-v1.1.1 && \
+    DST=/home/biodocker/bin && \
+    wget https://github.com/BioDocker/software-archive/releases/download/cava/$ZIP -O $DST/$ZIP && \
+    tar xvf $DST/$ZIP -C $DST && \
+    rm $DST/$ZIP && \
+    cd $DST/$FOLDER && \
+    sed -i -e 's#human_g1k_v37.fasta#'$DST/$FOLDER'/human_g1k_v37.fasta#;s#hg19.fa#'$DST/$FOLDER'/hg19.fa#;s#exome_65_GRCh37.gz#'$DST/$FOLDER'/exome_65_GRCh37.gz#;s#dbSNP138.gz#.#' $DST/$FOLDER/config.txt && \
     cd / && \
-    rm pysam-0.8.3.tar.gz
+    rm -rf $DST/$FOLDER
 
-RUN wget http://www.well.ox.ac.uk/bioinformatics/Software/Cava-full-latest.tgz && \
-    tar xvzf Cava-full-latest.tgz && \
-    rm Cava-full-latest.tgz && \
-    cd cava-v1.0.0/ && \
-    perl -pi -e 's/hg19.fa/\/Data\/references\/hg19.fa/;s/exome_65_GRCh37.gz/\/cava-v1.0.0\/exome_65_GRCh37.gz/;s/dbSNP138.gz/\./' cava-v1.0.0/config.txt && \
-    cd /
+ENV PATH=$PATH:/home/biodocker/bin/cava-v1.1.1/
 
 
 #####################################################
-# Install SNPEFF
+# Install BIOR
 #####################################################
-RUN wget http://sourceforge.net/projects/snpeff/files/snpEff_latest_core.zip && \
-    unzip snpEff_latest_core.zip && \
-    rm snpEff_latest_core.zip
+RUN ZIP=bior_2.1.1.tar.gz && \
+    FOLDER=bior_2.1.1 && \
+    DST=/home/biodocker/bin && \
+    wget https://github.com/BioDocker/software-archive/releases/download/BioR/$ZIP -O $DST/$ZIP && \
+    tar xvzf $DST/$ZIP -C $DST && \
+    rm -f $DST/$ZIP && \
+    echo "export BIOR_LITE_HOME=$DST/$FOLDER" > $DST/$FOLDER/PKG_PROFILE && \
+    ln -s $DST/$FOLDER/bin/* $DST/$FOLDER
 
+ENV BASEDIR=/home/biodocker/bin/bior_2.1.1
+ENV FOLDER=/home/biodocker/bin/bior_2.1.1
+ENV BIOR_LITE_HOME=$BASEDIR
+ENV PATH=$PATH:$BIOR_LITE_HOME/bin
 
-#####################################################
-# Get BEDtools
-#####################################################
-RUN git clone https://github.com/arq5x/bedtools2.git && \
-    cd /bedtools2/ && make && make install && cd /
+COPY annotate/ /home/biodocker/bin/annnotate/
 
-ENV PATH=$PATH:/bedtools2/bin
+ENV PATH=$PATH:/home/biodocker/bin/annnotate/scripts/
 
+# Change user to back to biodocker
+USER biodocker
 
+# CHANGE WORKDIR TO /DATA
+WORKDIR /data
 
+# DEFINE DEFAULT COMMAND
+CMD ["bash"]
 
+##################### INSTALLATION END #####################
+
+# File Author / Maintainer
+MAINTAINER Saulo Alves Aflitos <sauloal@gmail.com>

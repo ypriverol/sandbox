@@ -14,14 +14,12 @@
 FROM biodckr/biodocker
 
 ################## BEGIN INSTALLATION ######################
+
 # Change user to root
 USER root
 
 RUN apt-get update && \
     apt-get install -y \
-      build-essential \
-      zlib1g-dev \
-      python \
       libncurses5-dev \
       libncursesw5-dev && \
     apt-get clean && \
@@ -29,14 +27,16 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN ZIP=samtools-1.2.tar.bz2 && \
-    wget https://github.com/BioDocker/software-archive/releases/download/samtools/$ZIP -O /tmp/$ZIP && \
-    tar xvf /tmp/$ZIP -C /tmp && \
-    rm /tmp/$ZIP && \
-    cd /tmp/samtools-1.2 && \
+    FOLDER=samtools-1.2 && \
+    DST=/tmp && \
+    wget https://github.com/BioDocker/software-archive/releases/download/samtools/$ZIP -O $DST/$ZIP && \
+    tar xvf $DST/$ZIP -C $DST && \
+    rm $DST/$ZIP && \
+    cd $DST/$FOLDER && \
     make && \
     make install && \
     cd / && \
-    rm -rf /tmp/samtools-1.2
+    rm -rf $DST/$FOLDER
 
 # Change user to back to biodocker
 USER biodocker
