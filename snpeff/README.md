@@ -10,19 +10,19 @@ available software
 
 how to build
 ------------
-`docker build --rm -t biodckr/snpeff 4.1k/.`
+`docker build --rm -t biodckrdev/snpeff 4.1k/.`
 
 
 how to download and install
 ---------------------------
-`docker pull biodckr/snpeff`
+`docker pull biodckrdev/snpeff`
 
 
 how to use
 ------------
-`docker run --rm biodckr/snpeff <options> <files>`
-`docker run --rm biodckr/snpeff snpeff databases`
-`docker run --rm biodckr/snpeff snpsift`
+`docker run --rm biodckrdev/snpeff <options> <files>`
+`docker run --rm biodckrdev/snpeff snpeff databases`
+`docker run --rm biodckrdev/snpeff snpsift`
 
 
 software website

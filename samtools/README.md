@@ -10,17 +10,17 @@ available software
 
 how to build
 ------------
-`docker build --rm -t biodckr/samtools 1.2/.`
+`docker build --rm -t biodckrdev/samtools 1.2/.`
 
 
 how to download and install
 ---------------------------
-`docker pull biodckr/samtools`
+`docker pull biodckrdev/samtools`
 
 
 how to use
 ------------
-`docker run --rm biodckr/samtools <options> <files>`
+`docker run --rm biodckrdev/samtools <options> <files>`
 
 
 software website

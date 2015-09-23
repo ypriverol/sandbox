@@ -10,17 +10,17 @@ available software
 
 how to build
 ------------
-`docker build --rm -t biodckr/bedtools 2.25.0/.`
+`docker build --rm -t biodckrdev/bedtools 2.25.0/.`
 
 
 how to download and install
 ---------------------------
-`docker pull biodckr/bedtools`
+`docker pull biodckrdev/bedtools`
 
 
 how to use
 ------------
-`docker run --rm biodckr/bedtools <options> <files>`
+`docker run --rm biodckrdev/bedtools <options> <files>`
 
 
 software website
