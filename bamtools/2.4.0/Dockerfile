@@ -2,12 +2,12 @@
 # Dockerfile
 #
 # Version:          1
-# Software:         Samtools
+# Software:         bamtools
 # Software Version: 1.2
 # Base Image:       biodckr/biodocker
-# Build Cmd:        docker build --rm -t biodckrdev/samtools 1.2/.
-# Pull Cmd:         docker pull biodckrdev/samtools
-# Run Cmd:          docker run --rm biodckrdev/samtools <options> <files>
+# Build Cmd:        docker build --rm -t biodckrdev/bamtools 2.4.0/.
+# Pull Cmd:         docker pull biodckrdev/bamtools
+# Run Cmd:          docker run --rm biodckrdev/bamtools <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu
@@ -20,24 +20,27 @@ USER root
 
 RUN apt-get update && \
     apt-get install -y \
-      libncurses5-dev \
-      libncursesw5-dev && \
+      cmake && \
     apt-get clean && \
     apt-get purge && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN ZIP=samtools-1.2.tar.bz2 && \
-    FOLDER=samtools-1.2 && \
+RUN URL=https://github.com/pezmaster31/bamtools/archive/ && \
+    ZIP=v2.4.0.tar.gz && \
+    FOLDER=bamtools-2.4.0 && \
     DST=/tmp && \
-    wget https://github.com/BioDocker/software-archive/releases/download/samtools/$ZIP -O $DST/$ZIP && \
+    wget $URL/$ZIP -O $DST/$ZIP && \
     tar xvf $DST/$ZIP -C $DST && \
     rm $DST/$ZIP && \
     cd $DST/$FOLDER && \
+    mkdir build && \
+    cd build && \
+    cmake .. && \
     make && \
     make install && \
-    cd / && \
+    cp $DST/$FOLDER/lib/* /lib/ && \
     rm -rf $DST/$FOLDER
-
+   
 # Change user to back to biodocker
 USER biodocker
 
@@ -45,7 +48,7 @@ USER biodocker
 WORKDIR /data
 
 # DEFINE DEFAULT COMMAND
-CMD ["samtools"]
+CMD ["bamtools"]
 
 ##################### INSTALLATION END #####################
 

@@ -2,12 +2,12 @@
 # Dockerfile
 #
 # Version:          1
-# Software:         Samtools
+# Software:         vcftools
 # Software Version: 1.2
 # Base Image:       biodckr/biodocker
-# Build Cmd:        docker build --rm -t biodckrdev/samtools 1.2/.
-# Pull Cmd:         docker pull biodckrdev/samtools
-# Run Cmd:          docker run --rm biodckrdev/samtools <options> <files>
+# Build Cmd:        docker build --rm -t biodckrdev/vcftools 0.1.14/.
+# Pull Cmd:         docker pull biodckrdev/vcftools
+# Run Cmd:          docker run --rm biodckrdev/vcftools <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu
@@ -20,19 +20,20 @@ USER root
 
 RUN apt-get update && \
     apt-get install -y \
-      libncurses5-dev \
-      libncursesw5-dev && \
+      pkg-config && \
     apt-get clean && \
     apt-get purge && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN ZIP=samtools-1.2.tar.bz2 && \
-    FOLDER=samtools-1.2 && \
+RUN URL=https://github.com/vcftools/vcftools/releases/download/v0.1.14/ && \
+    ZIP=vcftools-0.1.14.tar.gz && \
+    FOLDER=vcftools-0.1.14 && \
     DST=/tmp && \
-    wget https://github.com/BioDocker/software-archive/releases/download/samtools/$ZIP -O $DST/$ZIP && \
+    wget $URL/$ZIP -O $DST/$ZIP && \
     tar xvf $DST/$ZIP -C $DST && \
     rm $DST/$ZIP && \
     cd $DST/$FOLDER && \
+    ./configure && \
     make && \
     make install && \
     cd / && \
@@ -40,12 +41,12 @@ RUN ZIP=samtools-1.2.tar.bz2 && \
 
 # Change user to back to biodocker
 USER biodocker
-
+   
 # CHANGE WORKDIR TO /DATA
 WORKDIR /data
 
 # DEFINE DEFAULT COMMAND
-CMD ["samtools"]
+CMD ["vcftools"]
 
 ##################### INSTALLATION END #####################
 
