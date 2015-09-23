@@ -11,7 +11,7 @@
 #################################################################
 
 # Set the base image to Ubuntu
-FROM biodckrdev/biodocker
+FROM biodckr/biodocker
 
 ################## BEGIN INSTALLATION ######################
 
