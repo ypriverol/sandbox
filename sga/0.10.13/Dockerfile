@@ -43,7 +43,9 @@ RUN wget $URL/$ZIP -O $DST/$ZIP && \
     cd $DST/$FOLDER && \
     ./configure && \
     make && \
-    make install
+    make install && \
+    cd / && \
+    rm -rf $DST/$FOLDER
 
 
 
