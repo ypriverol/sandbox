@@ -1,28 +1,28 @@
-soapec
+SOAPdenovo
 =====
-a correction tool for SOAPdenovo
+a novel short-read assembly method that can build a de novo draft assembly for the human-sized genomes
 
 
 available software
 --------
 `
-soapec 2.03
+soapdenovo 240
 `
 
 
 how to build
 ------------
-`docker build --rm -t biodckrdev/soapec 2.03/.`
+`docker build --rm -t biodckrdev/soapdenovo 240/.`
 
 
 how to download and install
 ---------------------------
-`docker pull biodckrdev/soapec`
+`docker pull biodckrdev/soapdenovo`
 
 
 how to use
 ------------
-`docker run --rm biodckrdev/soapec <options> <files>`
+`docker run --rm biodckrdev/soapdenovo <options> <files>`
 
 
 software website
