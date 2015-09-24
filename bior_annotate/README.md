@@ -8,13 +8,13 @@ BIOR (BIOLOGICAL REFERENCE REPOSITORY)
 available software
 --------
 ```
-htslib-1.2.1
-samtools-1.2
-bedtools-2.25.0
-snpEff_v4_1k
-pysam==0.8.3
-cava-full-v1.1.1
-bior_2.1.1
+htslib 1.2.1
+samtools 1.2
+bedtools 2.25.0
+snpEff v4.1k
+pysam 0.8.3
+cava-full v1.1.1
+bior 2.1.1
 ```
 
 

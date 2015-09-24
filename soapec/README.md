@@ -1,34 +1,35 @@
-CAVA: Clinical Annotation of Variants
+soapec
 =====
-CAVA (Clinical Annotation of Variants) is a lightweight, fast and flexible Next Generation Sequencing (NGS) variant annotation tool
+a correction tool for SOAPdenovo
 
 
 available software
 --------
 `
-pysam 0.8.3
-cava full 1.1.1
+soapec 2.03
 `
 
 
 how to build
 ------------
-`docker build --rm -t biodckrdev/cava 1.1.1/.`
+`docker build --rm -t biodckrdev/soapec 2.03/.`
 
 
 how to download and install
 ---------------------------
-`docker pull biodckr/cava`
+`docker pull biodckrdev/soapec`
 
 
 how to use
 ------------
-`docker run --rm biodckrdev/cava <options> <files>`
+`docker run --rm biodckrdev/soapec <options> <files>`
 
 
 software website
 ----------------
-`http://www.well.ox.ac.uk/cava`
+`
+http://soap.genomics.org.cn/soapdenovo.html
+`
 
 
 support

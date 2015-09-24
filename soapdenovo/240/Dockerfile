@@ -2,14 +2,14 @@
 # Dockerfile
 #
 # Version:          1
-# Software:         htslib
-# Software Version: 1.2.1
-# Provides:         htslib 1.2.1
+# Software:         soapdenovo
+# Software Version: 240
+# Provides:         soapdenovo 240
 # Tags:             Genomics
 # Base Image:       biodckr/biodocker
-# Build Cmd:        docker build --rm -t biodckrdev/htslib 1.2.1/.
-# Pull Cmd:         docker pull biodckrdev/htslib
-# Run Cmd:          docker run --rm biodckrdev/htslib <options> <files>
+# Build Cmd:        docker build --rm -t biodckrdev/soapdenovo 240/.
+# Pull Cmd:         docker pull biodckrdev/soapdenovo
+# Run Cmd:          docker run --rm biodckrdev/soapdenovo <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu
@@ -17,31 +17,24 @@ FROM biodckr/biodocker
 
 ################## BEGIN INSTALLATION ######################
 
-# Change user to root
-USER root
-
-ENV ZIP=htslib-1.2.1.tar.bz2
-ENV URL=https://github.com/BioDocker/software-archive/releases/download/htslib
-ENV FOLDER=htslib-1.2.1
+ENV ZIP=SOAPdenovo2-bin-LINUX-generic-r240.tgz
+ENV URL=https://github.com/BioDocker/software-archive/releases/download/soapdenovo
+ENV FOLDER=SOAPdenovo2-bin-LINUX-generic-r240
 ENV DST=/tmp
 
 RUN wget $URL/$ZIP -O $DST/$ZIP && \
     tar xvf $DST/$ZIP -C $DST && \
     rm $DST/$ZIP && \
     cd $DST/$FOLDER && \
-    make && \
-    make install && \
+    mv $DST/$FOLDER/SOAPdenovo* /home/biodocker/bin && \
     cd / && \
     rm -rf $DST/$FOLDER
-
-# Change user to back to biodocker
-USER biodocker
 
 # CHANGE WORKDIR TO /DATA
 WORKDIR /data
 
 # DEFINE DEFAULT COMMAND
-CMD ["tabix"]
+CMD ["SOAPdenovo-63mer"]
 
 ##################### INSTALLATION END #####################
 

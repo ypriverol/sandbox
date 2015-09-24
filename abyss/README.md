@@ -1,34 +1,37 @@
-CAVA: Clinical Annotation of Variants
+abyss
 =====
-CAVA (Clinical Annotation of Variants) is a lightweight, fast and flexible Next Generation Sequencing (NGS) variant annotation tool
+Assembly By Short Sequences - a de novo, parallel, paired-end sequence assembler
 
 
 available software
 --------
 `
-pysam 0.8.3
-cava full 1.1.1
+abyss 1.9.0
+sparsehash 2.0.2
 `
 
 
 how to build
 ------------
-`docker build --rm -t biodckrdev/cava 1.1.1/.`
+`docker build --rm -t biodckrdev/abyss 1.9.0/.`
 
 
 how to download and install
 ---------------------------
-`docker pull biodckr/cava`
+`docker pull biodckrdev/abyss`
 
 
 how to use
 ------------
-`docker run --rm biodckrdev/cava <options> <files>`
+`docker run --rm biodckrdev/abyss <options> <files>`
 
 
 software website
 ----------------
-`http://www.well.ox.ac.uk/cava`
+`
+http://www.bcgsc.ca/platform/bioinfo/software/abyss
+https://github.com/bcgsc/abyss/
+`
 
 
 support

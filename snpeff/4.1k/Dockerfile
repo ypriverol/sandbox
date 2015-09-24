@@ -2,8 +2,10 @@
 # Dockerfile
 #
 # Version:          1
-# Software:         snpEff
+# Software:         snpeff
 # Software Version: 4.1k
+# Provides:         snpeff 4.1k
+# Tags:             Genomics
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/snpeff 4.1k/.
 # Pull Cmd:         docker pull biodckrdev/snpeff
@@ -15,10 +17,12 @@ FROM biodckr/biodocker
 
 ################## BEGIN INSTALLATION ######################
 
-RUN ZIP=snpEff_v4_1k_core.zip && \
-    FOLDER=snpEff && \
-    DST=/home/biodocker/bin && \
-    wget https://github.com/BioDocker/software-archive/releases/download/snpEff/$ZIP -O $DST/$ZIP && \
+ENV ZIP=snpEff_v4_1k_core.zip
+ENV URL=https://github.com/BioDocker/software-archive/releases/download/snpEff
+ENV FOLDER=snpEff
+ENV DST=/home/biodocker/bin
+
+RUN wget $URL/$ZIP -O $DST/$ZIP && \
     unzip $DST/$ZIP -d $DST && \
     rm $DST/$ZIP && \
     bash -c 'echo -e "#!/bin/bash\njava -jar '$DST/$FOLDER'/snpEff.jar  \$@" > '$DST'/snpeff' && \

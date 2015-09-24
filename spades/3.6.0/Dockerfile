@@ -2,14 +2,14 @@
 # Dockerfile
 #
 # Version:          1
-# Software:         bowtie
-# Software Version: 1.1.2
-# Provides:         bowtie 1.1.2
+# Software:         spades
+# Software Version: 3.6.0
+# Provides:         spades 3.6.0
 # Tags:             Genomics
 # Base Image:       biodckr/biodocker
-# Build Cmd:        docker build --rm -t biodckrdev/bowtie 1.1.2/.
-# Pull Cmd:         docker pull biodckrdev/bowtie
-# Run Cmd:          docker run --rm biodckrdev/bowtie <options> <files>
+# Build Cmd:        docker build --rm -t biodckrdev/spades 3.6.0/.
+# Pull Cmd:         docker pull biodckrdev/spades
+# Run Cmd:          docker run --rm biodckrdev/spades <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu
@@ -17,22 +17,22 @@ FROM biodckr/biodocker
 
 ################## BEGIN INSTALLATION ######################
 
-ENV ZIP=bowtie-1.1.2-linux-x86_64.zip
-ENV URL=https://github.com/BioDocker/software-archive/releases/download/bowtie
-ENV FOLDER=bowtie-1.1.2
+ENV ZIP=SPAdes-3.6.0-Linux.tar.gz
+ENV URL=https://github.com/BioDocker/software-archive/releases/download/spades
+ENV FOLDER=SPAdes-3.6.0-Linux
 ENV DST=/home/biodocker/bin
 
 RUN wget $URL/$ZIP -O $DST/$ZIP && \
-    unzip $DST/$ZIP -d $DST && \
+    tar xvf $DST/$ZIP -C $DST && \
     rm $DST/$ZIP && \
-    mv $DST/$FOLDER/* $DST && \
-    rmdir $DST/$FOLDER
+    cd $DST/$FOLDER && \
+    mv $DST/$FOLDER/bin/* /home/biodocker/bin
 
 # CHANGE WORKDIR TO /DATA
 WORKDIR /data
 
 # DEFINE DEFAULT COMMAND
-CMD ["bowtie"]
+CMD ["bwa-spades"]
 
 ##################### INSTALLATION END #####################
 

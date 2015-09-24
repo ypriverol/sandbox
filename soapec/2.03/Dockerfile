@@ -2,14 +2,14 @@
 # Dockerfile
 #
 # Version:          1
-# Software:         bowtie
-# Software Version: 1.1.2
-# Provides:         bowtie 1.1.2
+# Software:         soapec
+# Software Version: 2.03
+# Provides:         soapec 2.03
 # Tags:             Genomics
 # Base Image:       biodckr/biodocker
-# Build Cmd:        docker build --rm -t biodckrdev/bowtie 1.1.2/.
-# Pull Cmd:         docker pull biodckrdev/bowtie
-# Run Cmd:          docker run --rm biodckrdev/bowtie <options> <files>
+# Build Cmd:        docker build --rm -t biodckrdev/soapec 2.03/.
+# Pull Cmd:         docker pull biodckrdev/soapec
+# Run Cmd:          docker run --rm biodckrdev/soapec <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu
@@ -17,22 +17,24 @@ FROM biodckr/biodocker
 
 ################## BEGIN INSTALLATION ######################
 
-ENV ZIP=bowtie-1.1.2-linux-x86_64.zip
-ENV URL=https://github.com/BioDocker/software-archive/releases/download/bowtie
-ENV FOLDER=bowtie-1.1.2
-ENV DST=/home/biodocker/bin
+ENV ZIP=SOAPec_bin_v2.03.tgz
+ENV URL=https://github.com/BioDocker/software-archive/releases/download/soapec
+ENV FOLDER=SOAPec_bin_v2.03
+ENV DST=/tmp
 
 RUN wget $URL/$ZIP -O $DST/$ZIP && \
-    unzip $DST/$ZIP -d $DST && \
+    tar xvf $DST/$ZIP -C $DST && \
     rm $DST/$ZIP && \
-    mv $DST/$FOLDER/* $DST && \
-    rmdir $DST/$FOLDER
+    cd $DST/$FOLDER && \
+    mv $DST/$FOLDER/bin/* /home/biodocker/bin && \
+    cd / && \
+    rm -rf $DST/$FOLDER
 
 # CHANGE WORKDIR TO /DATA
 WORKDIR /data
 
 # DEFINE DEFAULT COMMAND
-CMD ["bowtie"]
+CMD ["Corrector_HA"]
 
 ##################### INSTALLATION END #####################
 

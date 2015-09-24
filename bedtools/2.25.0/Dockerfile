@@ -4,6 +4,8 @@
 # Version:          1
 # Software:         Bedtools
 # Software Version: 2.25.0
+# Provides:         Bedtools 2.25.0
+# Tags:             Genomics
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/bedtools 2.25.0/.
 # Pull Cmd:         docker pull biodckrdev/bedtools
@@ -18,10 +20,12 @@ FROM biodckr/biodocker
 # Change user to root
 USER root
 
-RUN ZIP=bedtools-2.25.0.tar.gz && \
-    FOLDER=bedtools2 && \
-    DST=/tmp && \
-    wget https://github.com/arq5x/bedtools2/releases/download/v2.25.0/$ZIP -O $DST/$ZIP && \
+ENV ZIP=bedtools-2.25.0.tar.gz
+ENV URL=https://github.com/arq5x/bedtools2/releases/download/v2.25.0
+ENV FOLDER=bedtools2
+ENV DST=/tmp
+
+RUN wget $URL/$ZIP -O $DST/$ZIP && \
     tar xvf $DST/$ZIP -C $DST && \
     rm $DST/$ZIP && \
     cd $DST/$FOLDER && \

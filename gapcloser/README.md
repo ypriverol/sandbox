@@ -1,34 +1,35 @@
-CAVA: Clinical Annotation of Variants
+gapcloser
 =====
-CAVA (Clinical Annotation of Variants) is a lightweight, fast and flexible Next Generation Sequencing (NGS) variant annotation tool
+a novel short-read assembly method that can build a de novo draft assembly for the human-sized genomes
 
 
 available software
 --------
 `
-pysam 0.8.3
-cava full 1.1.1
+gapcloser 1.12-r6
 `
 
 
 how to build
 ------------
-`docker build --rm -t biodckrdev/cava 1.1.1/.`
+`docker build --rm -t biodckrdev/gapcloser 1.12-r6/.`
 
 
 how to download and install
 ---------------------------
-`docker pull biodckr/cava`
+`docker pull biodckrdev/gapcloser`
 
 
 how to use
 ------------
-`docker run --rm biodckrdev/cava <options> <files>`
+`docker run --rm biodckrdev/gapcloser <options> <files>`
 
 
 software website
 ----------------
-`http://www.well.ox.ac.uk/cava`
+`
+http://soap.genomics.org.cn/gapcloser.html
+`
 
 
 support

@@ -1,34 +1,36 @@
-CAVA: Clinical Annotation of Variants
+velvet
 =====
-CAVA (Clinical Annotation of Variants) is a lightweight, fast and flexible Next Generation Sequencing (NGS) variant annotation tool
+Short read de novo assembler using de Bruijn graphs
 
 
 available software
 --------
 `
-pysam 0.8.3
-cava full 1.1.1
+velvet 1.2.10
 `
 
 
 how to build
 ------------
-`docker build --rm -t biodckrdev/cava 1.1.1/.`
+`docker build --rm -t biodckrdev/velvet 1.2.10/.`
 
 
 how to download and install
 ---------------------------
-`docker pull biodckr/cava`
+`docker pull biodckrdev/velvet`
 
 
 how to use
 ------------
-`docker run --rm biodckrdev/cava <options> <files>`
+`docker run --rm biodckrdev/velvet <options> <files>`
 
 
 software website
 ----------------
-`http://www.well.ox.ac.uk/cava`
+`
+http://www.ebi.ac.uk/~zerbino/velvet/
+https://github.com/dzerbino/velvet
+`
 
 
 support

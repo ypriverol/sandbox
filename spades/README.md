@@ -1,34 +1,33 @@
-CAVA: Clinical Annotation of Variants
+spades
 =====
-CAVA (Clinical Annotation of Variants) is a lightweight, fast and flexible Next Generation Sequencing (NGS) variant annotation tool
+Tools (written in C using htslib) for manipulating next-generation sequencing data
 
 
 available software
 --------
-`
-pysam 0.8.3
-cava full 1.1.1
-`
+`spades 3.6.0`
 
 
 how to build
 ------------
-`docker build --rm -t biodckrdev/cava 1.1.1/.`
+`docker build --rm -t biodckrdev/spades 3.6.0/.`
 
 
 how to download and install
 ---------------------------
-`docker pull biodckr/cava`
+`docker pull biodckrdev/spades`
 
 
 how to use
 ------------
-`docker run --rm biodckrdev/cava <options> <files>`
+`docker run --rm biodckrdev/spades <options> <files>`
 
 
 software website
 ----------------
-`http://www.well.ox.ac.uk/cava`
+`
+http://bioinf.spbau.ru/spades
+`
 
 
 support

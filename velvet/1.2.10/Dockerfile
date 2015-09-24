@@ -2,14 +2,14 @@
 # Dockerfile
 #
 # Version:          1
-# Software:         bowtie
-# Software Version: 1.1.2
-# Provides:         bowtie 1.1.2
+# Software:         velvet
+# Software Version: 1.2.10
+# Provides:         velvet 1.2.10
 # Tags:             Genomics
 # Base Image:       biodckr/biodocker
-# Build Cmd:        docker build --rm -t biodckrdev/bowtie 1.1.2/.
-# Pull Cmd:         docker pull biodckrdev/bowtie
-# Run Cmd:          docker run --rm biodckrdev/bowtie <options> <files>
+# Build Cmd:        docker build --rm -t biodckrdev/velvet 1.2.10/.
+# Pull Cmd:         docker pull biodckrdev/velvet
+# Run Cmd:          docker run --rm biodckrdev/velvet <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu
@@ -17,22 +17,24 @@ FROM biodckr/biodocker
 
 ################## BEGIN INSTALLATION ######################
 
-ENV ZIP=bowtie-1.1.2-linux-x86_64.zip
-ENV URL=https://github.com/BioDocker/software-archive/releases/download/bowtie
-ENV FOLDER=bowtie-1.1.2
+ENV ZIP=velvet_1.2.10.tgz
+ENV URL=https://github.com/BioDocker/software-archive/releases/download/velvet/
+ENV FOLDER=velvet_1.2.10
 ENV DST=/home/biodocker/bin
 
 RUN wget $URL/$ZIP -O $DST/$ZIP && \
-    unzip $DST/$ZIP -d $DST && \
+    tar xvf $DST/$ZIP -C $DST && \
     rm $DST/$ZIP && \
-    mv $DST/$FOLDER/* $DST && \
-    rmdir $DST/$FOLDER
+    cd $DST/$FOLDER && \
+    make && \
+    cp $DST/$FOLDER/velvet* $DST && \
+    rm -rf $DST/$FOLDER
 
 # CHANGE WORKDIR TO /DATA
 WORKDIR /data
 
 # DEFINE DEFAULT COMMAND
-CMD ["bowtie"]
+CMD ["velvetg"]
 
 ##################### INSTALLATION END #####################
 

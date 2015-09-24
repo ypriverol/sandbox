@@ -1,34 +1,33 @@
-CAVA: Clinical Annotation of Variants
+jellyfish
 =====
-CAVA (Clinical Annotation of Variants) is a lightweight, fast and flexible Next Generation Sequencing (NGS) variant annotation tool
+A fast multi-threaded k-mer counter
 
 
 available software
 --------
 `
-pysam 0.8.3
-cava full 1.1.1
+jellyfish 2.2.3
 `
 
 
 how to build
 ------------
-`docker build --rm -t biodckrdev/cava 1.1.1/.`
+`docker build --rm -t biodckrdev/jellyfish 2.2.3/.`
 
 
 how to download and install
 ---------------------------
-`docker pull biodckr/cava`
+`docker pull biodckrdev/jellyfish`
 
 
 how to use
 ------------
-`docker run --rm biodckrdev/cava <options> <files>`
+`docker run --rm biodckrdev/jellyfish <options> <files>`
 
 
 software website
 ----------------
-`http://www.well.ox.ac.uk/cava`
+`https://github.com/gmarcais/Jellyfish`
 
 
 support

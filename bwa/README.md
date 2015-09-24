@@ -5,7 +5,7 @@ Burrow-Wheeler Aligner for pairwise alignment between DNA sequences
 
 available software
 --------
-`bwa 0.7.12`
+`bwa kit 0.7.12`
 
 
 how to build

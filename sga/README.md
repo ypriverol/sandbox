@@ -1,34 +1,38 @@
-CAVA: Clinical Annotation of Variants
+sga
 =====
-CAVA (Clinical Annotation of Variants) is a lightweight, fast and flexible Next Generation Sequencing (NGS) variant annotation tool
+de novo sequence assembler using string graphs http://genome.cshlp.org/content/22/3/549
 
 
 available software
 --------
 `
-pysam 0.8.3
-cava full 1.1.1
+sga 0.10.13
+bamtools 2.4.0
+sparsehash 2.0.2
+jemalloc 4.0.2
+pysam==0.8.3
+ruffus==2.6.3
 `
 
 
 how to build
 ------------
-`docker build --rm -t biodckrdev/cava 1.1.1/.`
+`docker build --rm -t biodckrdev/sga 0.10.13/.`
 
 
 how to download and install
 ---------------------------
-`docker pull biodckr/cava`
+`docker pull biodckrdev/sga`
 
 
 how to use
 ------------
-`docker run --rm biodckrdev/cava <options> <files>`
+`docker run --rm biodckrdev/sga <options> <files>`
 
 
 software website
 ----------------
-`http://www.well.ox.ac.uk/cava`
+`https://github.com/jts/sga`
 
 
 support

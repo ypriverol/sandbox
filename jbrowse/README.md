@@ -1,34 +1,36 @@
-CAVA: Clinical Annotation of Variants
+jbrowse
 =====
-CAVA (Clinical Annotation of Variants) is a lightweight, fast and flexible Next Generation Sequencing (NGS) variant annotation tool
+JBrowse is a fast, embeddable genome browser built completely with JavaScript and HTML5, with optional run-once data formatting tools written in Perl.
 
 
 available software
 --------
 `
-pysam 0.8.3
-cava full 1.1.1
+jbrowse 1.11.6
 `
 
 
 how to build
 ------------
-`docker build --rm -t biodckrdev/cava 1.1.1/.`
+`docker build --rm -t biodckrdev/jbrowse 1.11.6/.`
 
 
 how to download and install
 ---------------------------
-`docker pull biodckr/cava`
+`docker pull biodckrdev/jbrowse`
 
 
 how to use
 ------------
-`docker run --rm biodckrdev/cava <options> <files>`
+`docker run --rm -p 8000:8000 biodckrdev/jbrowse`
 
 
 software website
 ----------------
-`http://www.well.ox.ac.uk/cava`
+`
+https://github.com/Bioinformaticsnl/jbrowse
+http://jbrowse.org/
+`
 
 
 support

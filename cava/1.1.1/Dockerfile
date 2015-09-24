@@ -4,6 +4,8 @@
 # Version:          1
 # Software:         cava
 # Software Version: 1.1.1
+# Provides:         cava full 1.1.1|pysan 0.8.3
+# Tags:             Genomics
 # Base Image:       biodckrdev/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/cava 1.1.1/.
 # Pull Cmd:         docker pull biodckrdev/cava
@@ -23,10 +25,12 @@ RUN pip install pysam==0.8.3
 # Change user to back to biodocker
 USER biodocker
 
-RUN ZIP=cava-full-v1.1.1.tgz && \
-    FOLDER=cava-v1.1.1 && \
-    DST=/home/biodocker/bin && \
-    wget https://github.com/BioDocker/software-archive/releases/download/cava/$ZIP -O $DST/$ZIP && \
+ENV ZIP=cava-full-v1.1.1.tgz
+ENV URL=https://github.com/BioDocker/software-archive/releases/download/cava
+ENV FOLDER=cava-v1.1.1
+ENV DST=/home/biodocker/bin
+
+RUN wget $URL/$ZIP -O $DST/$ZIP && \
     tar xvf $DST/$ZIP -C $DST && \
     rm $DST/$ZIP && \
     cd $DST/$FOLDER && \

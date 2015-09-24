@@ -1,34 +1,33 @@
-CAVA: Clinical Annotation of Variants
+bamutils
 =====
-CAVA (Clinical Annotation of Variants) is a lightweight, fast and flexible Next Generation Sequencing (NGS) variant annotation tool
-
+repository that contains several programs that perform operations on SAM/BAM files
 
 available software
 --------
-`
-pysam 0.8.3
-cava full 1.1.1
-`
+`bamutils 1.0.13`
 
 
 how to build
 ------------
-`docker build --rm -t biodckrdev/cava 1.1.1/.`
+`docker build --rm -t biodckrdev/bamutils 1.0.13/.`
 
 
 how to download and install
 ---------------------------
-`docker pull biodckr/cava`
+`docker pull biodckrdev/bamutils`
 
 
 how to use
 ------------
-`docker run --rm biodckrdev/cava <options> <files>`
+`docker run --rm biodckrdev/bamutils <options> <files>`
 
 
 software website
 ----------------
-`http://www.well.ox.ac.uk/cava`
+`
+http://genome.sph.umich.edu/wiki/BamUtil
+https://github.com/statgen/bamUtil
+`
 
 
 support

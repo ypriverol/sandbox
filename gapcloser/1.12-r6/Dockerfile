@@ -2,14 +2,14 @@
 # Dockerfile
 #
 # Version:          1
-# Software:         bowtie
-# Software Version: 1.1.2
-# Provides:         bowtie 1.1.2
+# Software:         gapcloser
+# Software Version: 1.12-r6
+# Provides:         gapcloser 1.12-r6
 # Tags:             Genomics
 # Base Image:       biodckr/biodocker
-# Build Cmd:        docker build --rm -t biodckrdev/bowtie 1.1.2/.
-# Pull Cmd:         docker pull biodckrdev/bowtie
-# Run Cmd:          docker run --rm biodckrdev/bowtie <options> <files>
+# Build Cmd:        docker build --rm -t biodckrdev/gapcloser v1.12-r6/.
+# Pull Cmd:         docker pull biodckrdev/gapcloser
+# Run Cmd:          docker run --rm biodckrdev/gapcloser <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu
@@ -17,22 +17,19 @@ FROM biodckr/biodocker
 
 ################## BEGIN INSTALLATION ######################
 
-ENV ZIP=bowtie-1.1.2-linux-x86_64.zip
-ENV URL=https://github.com/BioDocker/software-archive/releases/download/bowtie
-ENV FOLDER=bowtie-1.1.2
+ENV ZIP=GapCloser-bin-v1.12-r6.tgz
+ENV URL=https://github.com/BioDocker/software-archive/releases/download/gapcloser
 ENV DST=/home/biodocker/bin
 
 RUN wget $URL/$ZIP -O $DST/$ZIP && \
-    unzip $DST/$ZIP -d $DST && \
-    rm $DST/$ZIP && \
-    mv $DST/$FOLDER/* $DST && \
-    rmdir $DST/$FOLDER
+    tar xvf $DST/$ZIP -C $DST && \
+    rm $DST/$ZIP
 
 # CHANGE WORKDIR TO /DATA
 WORKDIR /data
 
 # DEFINE DEFAULT COMMAND
-CMD ["bowtie"]
+CMD ["GapCloser"]
 
 ##################### INSTALLATION END #####################
 

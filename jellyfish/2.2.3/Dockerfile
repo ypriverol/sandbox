@@ -2,14 +2,14 @@
 # Dockerfile
 #
 # Version:          1
-# Software:         htslib
-# Software Version: 1.2.1
-# Provides:         htslib 1.2.1
+# Software:         jellyfish
+# Software Version: 2.2.3
+# Provides:         jellyfish 2.2.3
 # Tags:             Genomics
 # Base Image:       biodckr/biodocker
-# Build Cmd:        docker build --rm -t biodckrdev/htslib 1.2.1/.
-# Pull Cmd:         docker pull biodckrdev/htslib
-# Run Cmd:          docker run --rm biodckrdev/htslib <options> <files>
+# Build Cmd:        docker build --rm -t biodckrdev/jellyfish 2.2.3/.
+# Pull Cmd:         docker pull biodckrdev/jellyfish
+# Run Cmd:          docker run --rm biodckrdev/jellyfish <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu
@@ -20,17 +20,19 @@ FROM biodckr/biodocker
 # Change user to root
 USER root
 
-ENV ZIP=htslib-1.2.1.tar.bz2
-ENV URL=https://github.com/BioDocker/software-archive/releases/download/htslib
-ENV FOLDER=htslib-1.2.1
+ENV ZIP=jellyfish-2.2.3.tar.gz
+ENV URL=https://github.com/gmarcais/Jellyfish/releases/download/v2.2.3
+ENV FOLDER=jellyfish-2.2.3
 ENV DST=/tmp
 
 RUN wget $URL/$ZIP -O $DST/$ZIP && \
     tar xvf $DST/$ZIP -C $DST && \
     rm $DST/$ZIP && \
     cd $DST/$FOLDER && \
+    ./configure && \
     make && \
     make install && \
+    cp /usr/local/lib/libjellyfish-2.0.* /lib/x86_64-linux-gnu/ && \
     cd / && \
     rm -rf $DST/$FOLDER
 
@@ -41,7 +43,7 @@ USER biodocker
 WORKDIR /data
 
 # DEFINE DEFAULT COMMAND
-CMD ["tabix"]
+CMD ["jellyfish"]
 
 ##################### INSTALLATION END #####################
 
