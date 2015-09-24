@@ -3,11 +3,11 @@
 #
 # Version:          1
 # Software:         gapcloser
-# Software Version: 6
-# Provides:         gapcloser 6
+# Software Version: 1.12-r6
+# Provides:         gapcloser 1.12-r6
 # Tags:             Genomics
 # Base Image:       biodckr/biodocker
-# Build Cmd:        docker build --rm -t biodckrdev/gapcloser 6/.
+# Build Cmd:        docker build --rm -t biodckrdev/gapcloser v1.12-r6/.
 # Pull Cmd:         docker pull biodckrdev/gapcloser
 # Run Cmd:          docker run --rm biodckrdev/gapcloser <options> <files>
 #################################################################

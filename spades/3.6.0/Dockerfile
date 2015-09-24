@@ -2,14 +2,14 @@
 # Dockerfile
 #
 # Version:          1
-# Software:         soapec
-# Software Version: 2.03
-# Provides:         soapec 2.03
+# Software:         spades
+# Software Version: 3.6.0
+# Provides:         spades 3.6.0
 # Tags:             Genomics
 # Base Image:       biodckr/biodocker
-# Build Cmd:        docker build --rm -t biodckrdev/soapec 2.03/.
-# Pull Cmd:         docker pull biodckrdev/soapec
-# Run Cmd:          docker run --rm biodckrdev/soapec <options> <files>
+# Build Cmd:        docker build --rm -t biodckrdev/spades 3.6.0/.
+# Pull Cmd:         docker pull biodckrdev/spades
+# Run Cmd:          docker run --rm biodckrdev/spades <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu
@@ -20,19 +20,17 @@ FROM biodckr/biodocker
 # Change user to root
 #USER root
 
-#https://github.com/BioDocker/software-archive/releases/download/soapec/SOAPec_bin_v2.03.tgz
-ENV ZIP=SOAPec_bin_v2.03.tgz
-ENV URL=https://github.com/BioDocker/software-archive/releases/download/soapec
-ENV FOLDER=SOAPec_bin_v2.03
-ENV DST=/tmp
+#https://github.com/BioDocker/software-archive/releases/download/spades/SPAdes-3.6.0-Linux.tar.gz
+ENV ZIP=SPAdes-3.6.0-Linux.tar.gz
+ENV URL=https://github.com/BioDocker/software-archive/releases/download/spades
+ENV FOLDER=SPAdes-3.6.0-Linux
+ENV DST=/home/biodocker/bin
 
 RUN wget $URL/$ZIP -O $DST/$ZIP && \
     tar xvf $DST/$ZIP -C $DST && \
     rm $DST/$ZIP && \
     cd $DST/$FOLDER && \
-    mv $DST/$FOLDER/bin/* /home/biodocker/bin && \
-    cd / && \
-    rm -rf $DST/$FOLDER
+    mv $DST/$FOLDER/bin/* /home/biodocker/bin
 
 # Change user to back to biodocker
 USER biodocker
@@ -41,7 +39,7 @@ USER biodocker
 WORKDIR /data
 
 # DEFINE DEFAULT COMMAND
-CMD ["Corrector_HA"]
+CMD ["bwa-spades"]
 
 ##################### INSTALLATION END #####################
 

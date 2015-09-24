@@ -1,34 +1,32 @@
-gapcloser
+spades
 =====
-a novel short-read assembly method that can build a de novo draft assembly for the human-sized genomes
+Tools (written in C using htslib) for manipulating next-generation sequencing data
 
 
 available software
 --------
-`
-gapcloser 1.12-r6
-`
+`spades 3.6.0`
 
 
 how to build
 ------------
-`docker build --rm -t biodckrdev/gapcloser 1.12-r6/.`
+`docker build --rm -t biodckrdev/spades 3.6.0/.`
 
 
 how to download and install
 ---------------------------
-`docker pull biodckrdev/gapcloser`
+`docker pull biodckrdev/spades`
 
 
 how to use
 ------------
-`docker run --rm biodckrdev/gapcloser <options> <files>`
+`docker run --rm biodckrdev/spades <options> <files>`
 
 
 software website
 ----------------
 `
-http://soap.genomics.org.cn/gapcloser.html
+http://bioinf.spbau.ru/spades
 `
 
 
