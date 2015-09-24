@@ -4,6 +4,8 @@
 # Version:          1
 # Software:         abyss
 # Software Version: 1.9.0
+# Provides:         sparsehash 2.0.2|abyss 1.9.0
+# Tags:             Genomics
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/abyss 1.9.0/.
 # Pull Cmd:         docker pull biodckrdev/abyss
@@ -29,6 +31,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
+
 ENV ZIP=sparsehash-2.0.2.tar.gz
 ENV URL=https://github.com/sparsehash/sparsehash/archive
 ENV FOLDER=sparsehash-sparsehash-2.0.2
@@ -45,10 +48,10 @@ RUN wget $URL/$ZIP -O $DST/$ZIP && \
     rm -rf $DST/$FOLDER
 
 
-#https://github.com/bcgsc/abyss/releases/download/1.9.0/abyss-1.9.0.tar.gz
+
 ENV ZIP=abyss-1.9.0.tar.gz
-ENV FOLDER=abyss-1.9.0
 ENV URL=https://github.com/bcgsc/abyss/releases/download/1.9.0
+ENV FOLDER=abyss-1.9.0
 ENV DST=/tmp
 
 RUN wget $URL/$ZIP -O $DST/$ZIP && \

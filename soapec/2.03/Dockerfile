@@ -17,10 +17,6 @@ FROM biodckr/biodocker
 
 ################## BEGIN INSTALLATION ######################
 
-# Change user to root
-#USER root
-
-#https://github.com/BioDocker/software-archive/releases/download/soapec/SOAPec_bin_v2.03.tgz
 ENV ZIP=SOAPec_bin_v2.03.tgz
 ENV URL=https://github.com/BioDocker/software-archive/releases/download/soapec
 ENV FOLDER=SOAPec_bin_v2.03
@@ -33,9 +29,6 @@ RUN wget $URL/$ZIP -O $DST/$ZIP && \
     mv $DST/$FOLDER/bin/* /home/biodocker/bin && \
     cd / && \
     rm -rf $DST/$FOLDER
-
-# Change user to back to biodocker
-USER biodocker
 
 # CHANGE WORKDIR TO /DATA
 WORKDIR /data

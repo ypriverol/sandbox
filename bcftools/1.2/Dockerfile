@@ -4,6 +4,8 @@
 # Version:          1
 # Software:         Bcftools
 # Software Version: 1.2
+# Provides:         Bcftools 1.2
+# Tags:             Genomics
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/bcftools 1.2/.
 # Pull Cmd:         docker pull biodckrdev/bcftools
@@ -18,10 +20,12 @@ FROM biodckr/biodocker
 # Change user to root
 USER root
 
-RUN ZIP=bcftools-1.2.tar.bz2 && \
-    FOLDER=bcftools-1.2 && \
-    DST=/tmp && \
-    wget https://github.com/BioDocker/software-archive/releases/download/bcftools/$ZIP -O $DST/$ZIP && \
+ENV ZIP=bcftools-1.2.tar.bz2
+ENV URL=https://github.com/BioDocker/software-archive/releases/download/bcftools
+ENV FOLDER=bcftools-1.2
+ENV DST=/tmp
+
+RUN wget $URL/$ZIP -O $DST/$ZIP && \
     tar xvf $DST/$ZIP -C $DST && \
     rm $DST/$ZIP && \
     cd $DST/$FOLDER && \

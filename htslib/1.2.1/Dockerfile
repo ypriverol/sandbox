@@ -4,6 +4,8 @@
 # Version:          1
 # Software:         htslib
 # Software Version: 1.2.1
+# Provides:         htslib 1.2.1
+# Tags:             Genomics
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/htslib 1.2.1/.
 # Pull Cmd:         docker pull biodckrdev/htslib
@@ -18,10 +20,12 @@ FROM biodckr/biodocker
 # Change user to root
 USER root
 
-RUN ZIP=htslib-1.2.1.tar.bz2 && \
-    FOLDER=htslib-1.2.1 && \
-    DST=/tmp && \
-    wget https://github.com/BioDocker/software-archive/releases/download/htslib/$ZIP -O $DST/$ZIP && \
+ENV ZIP=htslib-1.2.1.tar.bz2
+ENV URL=https://github.com/BioDocker/software-archive/releases/download/htslib
+ENV FOLDER=htslib-1.2.1
+ENV DST=/tmp
+
+RUN wget $URL/$ZIP -O $DST/$ZIP && \
     tar xvf $DST/$ZIP -C $DST && \
     rm $DST/$ZIP && \
     cd $DST/$FOLDER && \

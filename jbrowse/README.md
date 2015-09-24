@@ -22,7 +22,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/jbrowse <options> <files>`
+`docker run --rm -p 8000:8000 biodckrdev/jbrowse`
 
 
 software website

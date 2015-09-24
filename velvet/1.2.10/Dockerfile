@@ -17,10 +17,6 @@ FROM biodckr/biodocker
 
 ################## BEGIN INSTALLATION ######################
 
-# Change user to root
-#USER root
-
-#https://github.com/BioDocker/software-archive/releases/download/velvet/velvet_1.2.10.tgz
 ENV ZIP=velvet_1.2.10.tgz
 ENV URL=https://github.com/BioDocker/software-archive/releases/download/velvet/
 ENV FOLDER=velvet_1.2.10
@@ -33,9 +29,6 @@ RUN wget $URL/$ZIP -O $DST/$ZIP && \
     make && \
     cp $DST/$FOLDER/velvet* $DST && \
     rm -rf $DST/$FOLDER
-
-# Change user to back to biodocker
-USER biodocker
 
 # CHANGE WORKDIR TO /DATA
 WORKDIR /data

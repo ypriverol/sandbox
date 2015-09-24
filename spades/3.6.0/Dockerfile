@@ -17,10 +17,6 @@ FROM biodckr/biodocker
 
 ################## BEGIN INSTALLATION ######################
 
-# Change user to root
-#USER root
-
-#https://github.com/BioDocker/software-archive/releases/download/spades/SPAdes-3.6.0-Linux.tar.gz
 ENV ZIP=SPAdes-3.6.0-Linux.tar.gz
 ENV URL=https://github.com/BioDocker/software-archive/releases/download/spades
 ENV FOLDER=SPAdes-3.6.0-Linux
@@ -31,9 +27,6 @@ RUN wget $URL/$ZIP -O $DST/$ZIP && \
     rm $DST/$ZIP && \
     cd $DST/$FOLDER && \
     mv $DST/$FOLDER/bin/* /home/biodocker/bin
-
-# Change user to back to biodocker
-USER biodocker
 
 # CHANGE WORKDIR TO /DATA
 WORKDIR /data

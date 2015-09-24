@@ -17,10 +17,6 @@ FROM biodckr/biodocker
 
 ################## BEGIN INSTALLATION ######################
 
-# Change user to root
-USER root
-
-#https://github.com/BioDocker/software-archive/releases/download/gapcloser/GapCloser-bin-v1.12-r6.tgz
 ENV ZIP=GapCloser-bin-v1.12-r6.tgz
 ENV URL=https://github.com/BioDocker/software-archive/releases/download/gapcloser
 ENV DST=/home/biodocker/bin
@@ -28,9 +24,6 @@ ENV DST=/home/biodocker/bin
 RUN wget $URL/$ZIP -O $DST/$ZIP && \
     tar xvf $DST/$ZIP -C $DST && \
     rm $DST/$ZIP
-
-# Change user to back to biodocker
-USER biodocker
 
 # CHANGE WORKDIR TO /DATA
 WORKDIR /data

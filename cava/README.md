@@ -6,8 +6,8 @@ CAVA (Clinical Annotation of Variants) is a lightweight, fast and flexible Next 
 available software
 --------
 `
-pysam==0.8.3
-cava 1.1.1
+pysam 0.8.3
+cava full 1.1.1
 `
 
 

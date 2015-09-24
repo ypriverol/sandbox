@@ -4,6 +4,8 @@
 # Version:          1
 # Software:         Samtools
 # Software Version: 1.2
+# Provides:         samtools 1.2
+# Tags:             Genomics
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/samtools 1.2/.
 # Pull Cmd:         docker pull biodckrdev/samtools
@@ -26,10 +28,13 @@ RUN apt-get update && \
     apt-get purge && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN ZIP=samtools-1.2.tar.bz2 && \
-    FOLDER=samtools-1.2 && \
-    DST=/tmp && \
-    wget https://github.com/BioDocker/software-archive/releases/download/samtools/$ZIP -O $DST/$ZIP && \
+
+ENV ZIP=samtools-1.2.tar.bz2
+ENV URL=https://github.com/BioDocker/software-archive/releases/download/samtools
+ENV FOLDER=samtools-1.2
+ENV DST=/tmp
+
+RUN wget $URL/$ZIP -O $DST/$ZIP && \
     tar xvf $DST/$ZIP -C $DST && \
     rm $DST/$ZIP && \
     cd $DST/$FOLDER && \

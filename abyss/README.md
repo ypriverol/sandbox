@@ -5,7 +5,10 @@ Assembly By Short Sequences - a de novo, parallel, paired-end sequence assembler
 
 available software
 --------
-`abyss 1.9.0`
+`
+abyss 1.9.0
+sparsehash 2.0.2
+`
 
 
 how to build

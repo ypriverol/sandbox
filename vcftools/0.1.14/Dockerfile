@@ -3,7 +3,9 @@
 #
 # Version:          1
 # Software:         vcftools
-# Software Version: 1.2
+# Software Version: 0.1.14
+# Provides:         vcftools 0.1.14
+# Tags:             Genomics
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/vcftools 0.1.14/.
 # Pull Cmd:         docker pull biodckrdev/vcftools
@@ -25,11 +27,14 @@ RUN apt-get update && \
     apt-get purge && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN URL=https://github.com/vcftools/vcftools/releases/download/v0.1.14/ && \
-    ZIP=vcftools-0.1.14.tar.gz && \
-    FOLDER=vcftools-0.1.14 && \
-    DST=/tmp && \
-    wget $URL/$ZIP -O $DST/$ZIP && \
+
+
+ENV URL=https://github.com/vcftools/vcftools/releases/download/v0.1.14/
+ENV ZIP=vcftools-0.1.14.tar.gz
+ENV FOLDER=vcftools-0.1.14
+ENV DST=/tmp
+
+RUN wget $URL/$ZIP -O $DST/$ZIP && \
     tar xvf $DST/$ZIP -C $DST && \
     rm $DST/$ZIP && \
     cd $DST/$FOLDER && \

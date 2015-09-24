@@ -32,6 +32,7 @@ RUN apt-get update && \
 
 
 
+
 ENV ZIP=sparsehash-2.0.2.tar.gz
 ENV URL=https://github.com/sparsehash/sparsehash/archive
 ENV FOLDER=sparsehash-sparsehash-2.0.2
@@ -70,7 +71,7 @@ RUN wget $URL/$ZIP -O $DST/$ZIP && \
 
 
 RUN pip install pysam==0.8.3 && \
-    pip install ruffus==2.6.3 --upgrade
+    pip install ruffus==2.6.3
 
 
 

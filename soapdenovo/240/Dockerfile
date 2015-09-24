@@ -17,10 +17,6 @@ FROM biodckr/biodocker
 
 ################## BEGIN INSTALLATION ######################
 
-# Change user to root
-USER root
-
-#https://github.com/BioDocker/software-archive/releases/download/soapdenovo/SOAPdenovo2-bin-LINUX-generic-r240.tgz
 ENV ZIP=SOAPdenovo2-bin-LINUX-generic-r240.tgz
 ENV URL=https://github.com/BioDocker/software-archive/releases/download/soapdenovo
 ENV FOLDER=SOAPdenovo2-bin-LINUX-generic-r240
@@ -33,9 +29,6 @@ RUN wget $URL/$ZIP -O $DST/$ZIP && \
     mv $DST/$FOLDER/SOAPdenovo* /home/biodocker/bin && \
     cd / && \
     rm -rf $DST/$FOLDER
-
-# Change user to back to biodocker
-USER biodocker
 
 # CHANGE WORKDIR TO /DATA
 WORKDIR /data

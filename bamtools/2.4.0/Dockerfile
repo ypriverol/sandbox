@@ -3,7 +3,9 @@
 #
 # Version:          1
 # Software:         bamtools
-# Software Version: 1.2
+# Software Version: 2.4.0
+# Provides:         bamtools 2.4.0
+# Tags:             Genomics
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/bamtools 2.4.0/.
 # Pull Cmd:         docker pull biodckrdev/bamtools
@@ -24,6 +26,8 @@ RUN apt-get update && \
     apt-get clean && \
     apt-get purge && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+
 
 RUN URL=https://github.com/pezmaster31/bamtools/archive/ && \
     ZIP=v2.4.0.tar.gz && \
