@@ -29,11 +29,12 @@ RUN apt-get update && \
 
 
 
-RUN URL=https://github.com/pezmaster31/bamtools/archive/ && \
-    ZIP=v2.4.0.tar.gz && \
-    FOLDER=bamtools-2.4.0 && \
-    DST=/tmp && \
-    wget $URL/$ZIP -O $DST/$ZIP && \
+ENV URL=https://github.com/pezmaster31/bamtools/archive/
+ENV ZIP=v2.4.0.tar.gz
+ENV FOLDER=bamtools-2.4.0
+ENV DST=/tmp
+
+RUN wget $URL/$ZIP -O $DST/$ZIP && \
     tar xvf $DST/$ZIP -C $DST && \
     rm $DST/$ZIP && \
     cd $DST/$FOLDER && \
