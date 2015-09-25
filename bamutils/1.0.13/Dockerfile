@@ -20,16 +20,16 @@ FROM biodckr/biodocker
 # Change user to root
 USER root
 
-ENV ZIP=bamutils-1.0.13.tar.bz2
-ENV URL=https://github.com/BioDocker/software-archive/releases/download/bamutils
-ENV FOLDER=bamutils-1.0.13
+ENV ZIP=BamUtilLibStatGen.1.0.13.tgz
+ENV URL=https://github.com/BioDocker/software-archive/releases/download/bamutil/
+ENV FOLDER=bamUtil_1.0.13
 ENV DST=/tmp
 
 RUN wget $URL/$ZIP -O $DST/$ZIP && \
     tar xvf $DST/$ZIP -C $DST && \
     rm $DST/$ZIP && \
     cd $DST/$FOLDER && \
-    make && \
+    make all && \
     make install && \
     cd / && \
     rm -rf $DST/$FOLDER
@@ -41,7 +41,7 @@ USER biodocker
 WORKDIR /data
 
 # DEFINE DEFAULT COMMAND
-CMD ["bamutils"]
+CMD ["bam"]
 
 ##################### INSTALLATION END #####################
 
