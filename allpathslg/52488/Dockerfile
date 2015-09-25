@@ -2,14 +2,14 @@
 # Dockerfile
 #
 # Version:          1
-# Software:         bamtools
-# Software Version: 2.4.0
-# Provides:         bamtools 2.4.0
+# Software:         AllPathsLG
+# Software Version: 52488
+# Provides:         allpathslg 52488
 # Tags:             Genomics
 # Base Image:       biodckr/biodocker
-# Build Cmd:        docker build --rm -t biodckrdev/bamtools 2.4.0/.
-# Pull Cmd:         docker pull biodckrdev/bamtools
-# Run Cmd:          docker run --rm biodckrdev/bamtools <options> <files>
+# Build Cmd:        docker build --rm -t biodckrdev/allpathslg 52488/.
+# Pull Cmd:         docker pull biodckrdev/allpathslg
+# Run Cmd:          docker run --rm biodckrdev/allpathslg <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu
@@ -20,32 +20,33 @@ FROM biodckr/biodocker
 # Change user to root
 USER root
 
-RUN apt-get update && \
-    apt-get install -y \
-      cmake && \
-    apt-get clean && \
-    apt-get purge && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+#RUN apt-get update && \
+#    apt-get install -y \
+#    && \
+#    apt-get clean && \
+#    apt-get purge && \
+#    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
 
-ENV URL=https://github.com/pezmaster31/bamtools/archive/
-ENV ZIP=v2.4.0.tar.gz
-ENV FOLDER=bamtools-2.4.0
+
+#https://github.com/BioDocker/software-archive/releases/download/allpathslg/allpathslg-52488.tar.gz
+ENV ZIP=allpathslg-52488.tar.gz
+ENV URL=https://github.com/BioDocker/software-archive/releases/download/allpathslg/
+ENV FOLDER=allpathslg-52488
 ENV DST=/tmp
 
 RUN wget $URL/$ZIP -O $DST/$ZIP && \
     tar xvf $DST/$ZIP -C $DST && \
     rm $DST/$ZIP && \
     cd $DST/$FOLDER && \
-    mkdir build && \
-    cd build && \
-    cmake .. && \
+    ./configure && \
     make && \
     make install && \
-    cp $DST/$FOLDER/lib/* /lib/ && \
+    cd / && \
     rm -rf $DST/$FOLDER
-   
+
 # Change user to back to biodocker
 USER biodocker
 
@@ -53,7 +54,7 @@ USER biodocker
 WORKDIR /data
 
 # DEFINE DEFAULT COMMAND
-CMD ["bamtools"]
+CMD ["allpathslg"]
 
 ##################### INSTALLATION END #####################
 

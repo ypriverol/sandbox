@@ -2,14 +2,14 @@
 # Dockerfile
 #
 # Version:          1
-# Software:         bamtools
-# Software Version: 2.4.0
-# Provides:         bamtools 2.4.0
+# Software:         frc_align
+# Software Version: 20150723
+# Provides:         frc_align 20150723
 # Tags:             Genomics
 # Base Image:       biodckr/biodocker
-# Build Cmd:        docker build --rm -t biodckrdev/bamtools 2.4.0/.
-# Pull Cmd:         docker pull biodckrdev/bamtools
-# Run Cmd:          docker run --rm biodckrdev/bamtools <options> <files>
+# Build Cmd:        docker build --rm -t biodckrdev/frc_align 20150723/.
+# Pull Cmd:         docker pull biodckrdev/frc_align
+# Run Cmd:          docker run --rm biodckrdev/frc_align <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu
@@ -22,28 +22,29 @@ USER root
 
 RUN apt-get update && \
     apt-get install -y \
-      cmake && \
+      cmake            \
+      libboost-all-dev \
+    && \
     apt-get clean && \
     apt-get purge && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
-
-ENV URL=https://github.com/pezmaster31/bamtools/archive/
-ENV ZIP=v2.4.0.tar.gz
-ENV FOLDER=bamtools-2.4.0
+ENV ZIP=5b3f53e01cb539c857fd4230ec9410d76220fe22.zip
+ENV URL=https://github.com/vezzi/FRC_align/archive/
+ENV FOLDER=FRC_align-5b3f53e01cb539c857fd4230ec9410d76220fe22
 ENV DST=/tmp
 
 RUN wget $URL/$ZIP -O $DST/$ZIP && \
-    tar xvf $DST/$ZIP -C $DST && \
+    unzip $DST/$ZIP -d $DST && \
     rm $DST/$ZIP && \
-    cd $DST/$FOLDER && \
+    set -xeu && cd $DST/$FOLDER && \
     mkdir build && \
     cd build && \
     cmake .. && \
     make && \
-    make install && \
-    cp $DST/$FOLDER/lib/* /lib/ && \
+    cp -ar $DST/$FOLDER/lib/* /lib/ && \
+    cp $DST/$FOLDER/bin/FRC /usr/bin/ && \
     rm -rf $DST/$FOLDER
    
 # Change user to back to biodocker
@@ -53,7 +54,7 @@ USER biodocker
 WORKDIR /data
 
 # DEFINE DEFAULT COMMAND
-CMD ["bamtools"]
+CMD ["FRC"]
 
 ##################### INSTALLATION END #####################
 
