@@ -20,7 +20,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/allpathslg <options> <files>`
+`docker run --rm -it biodckrdev/allpathslg <options> <files>`
 
 
 software website

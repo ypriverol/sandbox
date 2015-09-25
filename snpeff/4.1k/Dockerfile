@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/snpeff 4.1k/.
 # Pull Cmd:         docker pull biodckrdev/snpeff
-# Run Cmd:          docker run --rm biodckrdev/snpeff <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/snpeff <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu

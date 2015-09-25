@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/spades 3.6.0/.
 # Pull Cmd:         docker pull biodckrdev/spades
-# Run Cmd:          docker run --rm biodckrdev/spades <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/spades <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu
@@ -26,7 +26,8 @@ RUN wget $URL/$ZIP -O $DST/$ZIP && \
     tar xvf $DST/$ZIP -C $DST && \
     rm $DST/$ZIP && \
     cd $DST/$FOLDER && \
-    mv $DST/$FOLDER/bin/* /home/biodocker/bin
+    mv $DST/$FOLDER/bin/* /home/biodocker/bin && \
+    rm -rf $DST/$FOLDER
 
 # CHANGE WORKDIR TO /DATA
 WORKDIR /data

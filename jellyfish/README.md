@@ -22,7 +22,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/jellyfish <options> <files>`
+`docker run --rm -it biodckrdev/jellyfish <options> <files>`
 
 
 software website

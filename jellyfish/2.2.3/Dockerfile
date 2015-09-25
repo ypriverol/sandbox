@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/jellyfish 2.2.3/.
 # Pull Cmd:         docker pull biodckrdev/jellyfish
-# Run Cmd:          docker run --rm biodckrdev/jellyfish <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/jellyfish <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu

@@ -30,7 +30,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/bior_annotate <options> <files>`
+`docker run --rm -it biodckrdev/bior_annotate <options> <files>`
 
 
 ```

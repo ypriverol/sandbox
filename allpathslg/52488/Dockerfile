@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/allpathslg 52488/.
 # Pull Cmd:         docker pull biodckrdev/allpathslg
-# Run Cmd:          docker run --rm biodckrdev/allpathslg <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/allpathslg <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu
@@ -21,17 +21,6 @@ FROM biodckr/biodocker
 USER root
 
 
-#RUN apt-get update && \
-#    apt-get install -y \
-#    && \
-#    apt-get clean && \
-#    apt-get purge && \
-#    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-
-
-
-#https://github.com/BioDocker/software-archive/releases/download/allpathslg/allpathslg-52488.tar.gz
 ENV ZIP=allpathslg-52488.tar.gz
 ENV URL=https://github.com/BioDocker/software-archive/releases/download/allpathslg/
 ENV FOLDER=allpathslg-52488

@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/sga 0.10.13/.
 # Pull Cmd:         docker pull biodckrdev/sga
-# Run Cmd:          docker run --rm biodckrdev/sga <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/sga <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu
@@ -77,8 +77,8 @@ RUN pip install pysam==0.8.3 && \
 
 
 
-ENV URL=https://github.com/pezmaster31/bamtools/archive/
 ENV ZIP=v2.4.0.tar.gz
+ENV URL=https://github.com/pezmaster31/bamtools/archive/
 ENV FOLDER=bamtools-2.4.0
 ENV DST=/tmp
 

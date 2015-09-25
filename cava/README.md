@@ -23,7 +23,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/cava <options> <files>`
+`docker run --rm -it biodckrdev/cava <options> <files>`
 
 
 software website

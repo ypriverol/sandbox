@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/htslib 1.2.1/.
 # Pull Cmd:         docker pull biodckrdev/htslib
-# Run Cmd:          docker run --rm biodckrdev/htslib <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/htslib <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu

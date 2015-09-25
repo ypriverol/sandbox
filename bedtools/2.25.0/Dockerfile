@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/bedtools 2.25.0/.
 # Pull Cmd:         docker pull biodckrdev/bedtools
-# Run Cmd:          docker run --rm biodckrdev/bedtools <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/bedtools <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu

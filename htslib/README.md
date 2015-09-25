@@ -20,7 +20,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/htslib <options> <files>`
+`docker run --rm -it biodckrdev/htslib <options> <files>`
 
 
 software website

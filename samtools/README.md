@@ -20,7 +20,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/samtools <options> <files>`
+`docker run --rm -it biodckrdev/samtools <options> <files>`
 
 
 software website

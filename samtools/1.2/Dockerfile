@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/samtools 1.2/.
 # Pull Cmd:         docker pull biodckrdev/samtools
-# Run Cmd:          docker run --rm biodckrdev/samtools <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/samtools <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu

@@ -9,7 +9,7 @@
 # Base Image:       biodckrdev/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/cava 1.1.1/.
 # Pull Cmd:         docker pull biodckrdev/cava
-# Run Cmd:          docker run --rm biodckrdev/cava <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/cava <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu

@@ -20,7 +20,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/bamtools <options> <files>`
+`docker run --rm -it biodckrdev/bamtools <options> <files>`
 
 
 software website

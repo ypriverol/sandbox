@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/soapec 2.03/.
 # Pull Cmd:         docker pull biodckrdev/soapec
-# Run Cmd:          docker run --rm biodckrdev/soapec <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/soapec <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu

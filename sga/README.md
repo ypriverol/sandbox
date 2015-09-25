@@ -27,7 +27,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/sga <options> <files>`
+`docker run --rm -it biodckrdev/sga <options> <files>`
 
 
 software website

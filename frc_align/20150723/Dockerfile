@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/frc_align 20150723/.
 # Pull Cmd:         docker pull biodckrdev/frc_align
-# Run Cmd:          docker run --rm biodckrdev/frc_align <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/frc_align <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu

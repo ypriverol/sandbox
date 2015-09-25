@@ -22,7 +22,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/velvet <options> <files>`
+`docker run --rm -it biodckrdev/velvet <options> <files>`
 
 
 software website

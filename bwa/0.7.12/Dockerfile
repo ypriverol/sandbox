@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/bwa 0.7.12/.
 # Pull Cmd:         docker pull biodckrdev/bwa
-# Run Cmd:          docker run --rm biodckrdev/bwa <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/bwa <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu

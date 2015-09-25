@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/bowtie 1.1.2/.
 # Pull Cmd:         docker pull biodckrdev/bowtie
-# Run Cmd:          docker run --rm biodckrdev/bowtie <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/bowtie <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu

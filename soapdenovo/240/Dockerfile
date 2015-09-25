@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/soapdenovo 240/.
 # Pull Cmd:         docker pull biodckrdev/soapdenovo
-# Run Cmd:          docker run --rm biodckrdev/soapdenovo <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/soapdenovo <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu
