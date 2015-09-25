@@ -1,0 +1,64 @@
+#################################################################
+# Dockerfile
+#
+# Version:          1
+# Software:         discovar
+# Software Version: 52488
+# Provides:         discovar 52488
+# Tags:             Genomics
+# Base Image:       biodckr/biodocker
+# Build Cmd:        docker build --rm -t biodckrdev/discovar 52488/.
+# Pull Cmd:         docker pull biodckrdev/discovar
+# Run Cmd:          docker run --rm biodckrdev/discovar <options> <files>
+#################################################################
+
+# Set the base image to Ubuntu
+FROM biodckr/biodocker
+
+################## BEGIN INSTALLATION ######################
+
+# Change user to root
+USER root
+
+
+#RUN apt-get update && \
+#    apt-get install -y \
+#    && \
+#    apt-get clean && \
+#    apt-get purge && \
+#    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+
+
+#https://github.com/BioDocker/software-archive/releases/download/discovar/discovar-52488.tar.gz
+ENV ZIP=discovar-52488.tar.gz
+ENV URL=https://github.com/BioDocker/software-archive/releases/download/discovar
+ENV FOLDER=discovar-52488
+ENV DST=/tmp
+
+ENV MALLOC_PER_THREAD 1
+
+RUN wget $URL/$ZIP -O $DST/$ZIP && \
+    tar xvf $DST/$ZIP -C $DST && \
+    rm $DST/$ZIP && \
+    cd $DST/$FOLDER && \
+    ./configure && \
+    make && \
+    make install && \
+    cd / && \
+    rm -rf $DST/$FOLDER
+
+# Change user to back to biodocker
+USER biodocker
+
+# CHANGE WORKDIR TO /DATA
+WORKDIR /data
+
+# DEFINE DEFAULT COMMAND
+CMD ["Discovar"]
+
+##################### INSTALLATION END #####################
+
+# File Author / Maintainer
+MAINTAINER Saulo Alves Aflitos <sauloal@gmail.com>
+

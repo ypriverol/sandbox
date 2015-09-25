@@ -1,33 +1,33 @@
-AllPathsLG
+Discovar
 =====
-whole‐genome shotgun assembler that can generate high‐quality genome assemblies using short reads
+DISCOVAR is a new variant caller
 
 
 available software
 --------
-`allpathslg 52488`
+`discovar 52488`
 
 
 how to build
 ------------
-`docker build --rm -t biodckrdev/allpathslg 52488/.`
+`docker build --rm -t biodckrdev/discovar 52488/.`
 
 
 how to download and install
 ---------------------------
-`docker pull biodckrdev/allpathslg`
+`docker pull biodckrdev/discovar`
 
 
 how to use
 ------------
-`docker run --rm biodckrdev/allpathslg <options> <files>`
+`docker run --rm biodckrdev/discovar <options> <files>`
 
 
 software website
 ----------------
 `
-https://github.com/lh3/allpathslg
-http://bio-allpathslg.sourceforge.net/
+https://github.com/lh3/discovar
+http://bio-discovar.sourceforge.net/
 `
 
 
