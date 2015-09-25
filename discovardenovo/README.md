@@ -1,32 +1,32 @@
-AllPathsLG
+Discovar de novo
 =====
-whole‐genome shotgun assembler that can generate high‐quality genome assemblies using short reads
+Genome variant discovery through assembly
 
 
 available software
 --------
-`allpathslg 52488`
+`discovardenovo 52488`
 
 
 how to build
 ------------
-`docker build --rm -t biodckrdev/allpathslg 52488/.`
+`docker build --rm -t biodckrdev/discovardenovo 52488/.`
 
 
 how to download and install
 ---------------------------
-`docker pull biodckrdev/allpathslg`
+`docker pull biodckrdev/discovardenovo`
 
 
 how to use
 ------------
-`docker run --rm biodckrdev/allpathslg <options> <files>`
+`docker run --rm biodckrdev/discovardenovo <options> <files>`
 
 
 software website
 ----------------
 `
-http://www.broadinstitute.org/software/allpaths-lg/blog/
+http://www.broadinstitute.org/software/discovar/blog/?page_id=19
 `
 
 

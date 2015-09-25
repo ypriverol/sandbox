@@ -26,8 +26,7 @@ how to use
 software website
 ----------------
 `
-https://github.com/lh3/discovar
-http://bio-discovar.sourceforge.net/
+http://www.broadinstitute.org/software/discovar/blog/?page_id=19
 `
 
 
