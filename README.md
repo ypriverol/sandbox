@@ -32,3 +32,8 @@ Containers            : https://github.com/BioDocker/containers
 Containers Development: https://github.com/BioDocker/sandbox
 
 Email                 : biodockers@gmail.com
+
+License
+----------
+
+[Apache 2](http://www.apache.org/licenses/LICENSE-2.0)
