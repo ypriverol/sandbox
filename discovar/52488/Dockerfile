@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/discovar 52488/.
 # Pull Cmd:         docker pull biodckrdev/discovar
-# Run Cmd:          docker run --rm biodckrdev/discovar <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/discovar <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu
@@ -20,17 +20,6 @@ FROM biodckr/biodocker
 # Change user to root
 USER root
 
-
-#RUN apt-get update && \
-#    apt-get install -y \
-#    && \
-#    apt-get clean && \
-#    apt-get purge && \
-#    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-
-
-#https://github.com/BioDocker/software-archive/releases/download/discovar/discovar-52488.tar.gz
 ENV ZIP=discovar-52488.tar.gz
 ENV URL=https://github.com/BioDocker/software-archive/releases/download/discovar
 ENV FOLDER=discovar-52488

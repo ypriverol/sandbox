@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/vcftools 0.1.14/.
 # Pull Cmd:         docker pull biodckrdev/vcftools
-# Run Cmd:          docker run --rm biodckrdev/vcftools <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/vcftools <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu
@@ -29,8 +29,8 @@ RUN apt-get update && \
 
 
 
-ENV URL=https://github.com/vcftools/vcftools/releases/download/v0.1.14/
 ENV ZIP=vcftools-0.1.14.tar.gz
+ENV URL=https://github.com/vcftools/vcftools/releases/download/v0.1.14/
 ENV FOLDER=vcftools-0.1.14
 ENV DST=/tmp
 

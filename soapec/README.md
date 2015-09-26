@@ -22,7 +22,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/soapec <options> <files>`
+`docker run --rm -it biodckrdev/soapec <options> <files>`
 
 
 software website

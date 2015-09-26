@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/bcftools 1.2/.
 # Pull Cmd:         docker pull biodckrdev/bcftools
-# Run Cmd:          docker run --rm biodckrdev/bcftools <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/bcftools <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu

@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/picard 1.139/.
 # Pull Cmd:         docker pull biodckrdev/picard
-# Run Cmd:          docker run --rm biodckrdev/picard <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/picard <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu

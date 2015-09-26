@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/discovardenovo 52488/.
 # Pull Cmd:         docker pull biodckrdev/discovardenovo
-# Run Cmd:          docker run --rm biodckrdev/discovardenovo <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/discovardenovo <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu
@@ -38,7 +38,6 @@ RUN wget $URL/$ZIP -O $DST/$ZIP && \
 
 
 
-#https://github.com/BioDocker/software-archive/releases/download/discovardenovo/discovardenovo-52488.tar.gz
 ENV ZIP=discovardenovo-52488.tar.gz
 ENV URL=https://github.com/BioDocker/software-archive/releases/download/discovardenovo
 ENV FOLDER=discovardenovo-52488

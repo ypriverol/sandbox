@@ -19,7 +19,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/bamutils <options> <files>`
+`docker run --rm -it biodckrdev/bamutils <options> <files>`
 
 
 software website

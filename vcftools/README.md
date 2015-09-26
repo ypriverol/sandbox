@@ -20,7 +20,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/vcftools <options> <files>`
+`docker run --rm -it biodckrdev/vcftools <options> <files>`
 
 
 software website

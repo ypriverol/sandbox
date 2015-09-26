@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/bamtools 2.4.0/.
 # Pull Cmd:         docker pull biodckrdev/bamtools
-# Run Cmd:          docker run --rm biodckrdev/bamtools <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/bamtools <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu
@@ -29,8 +29,8 @@ RUN apt-get update && \
 
 
 
-ENV URL=https://github.com/pezmaster31/bamtools/archive/
 ENV ZIP=v2.4.0.tar.gz
+ENV URL=https://github.com/pezmaster31/bamtools/archive/
 ENV FOLDER=bamtools-2.4.0
 ENV DST=/tmp
 

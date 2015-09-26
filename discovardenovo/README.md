@@ -20,7 +20,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/discovardenovo <options> <files>`
+`docker run --rm -it biodckrdev/discovardenovo <options> <files>`
 
 
 software website

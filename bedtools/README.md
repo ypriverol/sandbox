@@ -20,7 +20,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/bedtools <options> <files>`
+`docker run --rm -it biodckrdev/bedtools <options> <files>`
 
 
 software website

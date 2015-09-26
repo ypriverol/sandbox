@@ -1,32 +1,33 @@
-AllPathsLG
+GATK
 =====
-whole‐genome shotgun assembler that can generate high‐quality genome assemblies using short reads
+The Genome Analysis Toolkit or GATK is a software package developed at the Broad Institute to analyze high-throughput sequencing data.
 
 
 available software
 --------
-`allpathslg 52488`
+`gatk 3.4`
 
 
 how to build
 ------------
-`docker build --rm -t biodckrdev/allpathslg 52488/.`
+`docker build --rm -t biodckrdev/gatk 3.4/.`
 
 
 how to download and install
 ---------------------------
-`docker pull biodckrdev/allpathslg`
+`docker pull biodckrdev/gatk`
 
 
 how to use
 ------------
-`docker run --rm -it biodckrdev/allpathslg <options> <files>`
+`docker run --rm -it biodckrdev/gatk <options> <files>`
 
 
 software website
 ----------------
 `
-http://www.broadinstitute.org/software/allpaths-lg/blog/
+https://www.broadinstitute.org/gatk/
+https://github.com/broadgsa/gatk-protected/
 `
 
 

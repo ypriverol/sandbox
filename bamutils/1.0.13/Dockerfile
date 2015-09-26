@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/bamutils 1.0.13/.
 # Pull Cmd:         docker pull biodckrdev/bamutils
-# Run Cmd:          docker run --rm biodckrdev/bamutils <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/bamutils <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu

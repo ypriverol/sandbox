@@ -23,7 +23,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/abyss <options> <files>`
+`docker run --rm -it biodckrdev/abyss <options> <files>`
 
 
 software website

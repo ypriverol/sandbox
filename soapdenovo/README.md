@@ -22,7 +22,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/soapdenovo <options> <files>`
+`docker run --rm -it biodckrdev/soapdenovo <options> <files>`
 
 
 software website

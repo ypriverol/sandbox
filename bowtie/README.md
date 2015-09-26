@@ -20,7 +20,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/bowtie <options> <files>`
+`docker run --rm -it biodckrdev/bowtie <options> <files>`
 
 
 software website

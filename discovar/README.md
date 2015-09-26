@@ -20,7 +20,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/discovar <options> <files>`
+`docker run --rm -it biodckrdev/discovar <options> <files>`
 
 
 software website

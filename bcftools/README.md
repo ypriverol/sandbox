@@ -20,7 +20,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/bcftools <options> <files>`
+`docker run --rm -it biodckrdev/bcftools <options> <files>`
 
 
 software website

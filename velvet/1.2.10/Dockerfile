@@ -9,7 +9,7 @@
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/velvet 1.2.10/.
 # Pull Cmd:         docker pull biodckrdev/velvet
-# Run Cmd:          docker run --rm biodckrdev/velvet <options> <files>
+# Run Cmd:          docker run --rm -it biodckrdev/velvet <options> <files>
 #################################################################
 
 # Set the base image to Ubuntu

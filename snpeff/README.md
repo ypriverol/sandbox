@@ -20,9 +20,9 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/snpeff <options> <files>`
-`docker run --rm biodckrdev/snpeff snpeff databases`
-`docker run --rm biodckrdev/snpeff snpsift`
+`docker run --rm -it biodckrdev/snpeff <options> <files>`
+`docker run --rm -it biodckrdev/snpeff snpeff databases`
+`docker run --rm -it biodckrdev/snpeff snpsift`
 
 
 software website

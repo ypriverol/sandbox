@@ -22,7 +22,7 @@ how to download and install
 
 how to use
 ------------
-`docker run --rm biodckrdev/frc_courve <options> <files>`
+`docker run --rm -it biodckrdev/frc_courve <options> <files>`
 
 
 software website
