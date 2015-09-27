@@ -26,8 +26,7 @@ how to use
 software website
 ----------------
 ```
-http://sourceforge.net/projects/gcta/
-http://gcta.sourceforge.net/
+http://cnsgenomics.com/software/gcta/index.html
 ```
 
 
