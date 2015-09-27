@@ -66,7 +66,7 @@ RUN wget $URL/$ZIP -O $DST/$ZIP && \
 #
 # Add biodocker user with password biodocker
 #
-RUN useradd --create-home --shell /bin/bash --user-group --uid 1001 --groups sudo biodocker && \
+RUN useradd --create-home --shell /bin/bash --user-group --uid 1000 --groups sudo biodocker && \
     echo `echo "biodocker\nbiodocker\n" | passwd biodocker`
 
 
