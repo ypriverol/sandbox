@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         jbrowse
 # Software Version: 1.11.6
-# Provides:         jbrowse 1.11.6
+# Description:      JBrowse is a fast, embeddable genome browser built completely with JavaScript and HTML5, with optional run-once data formatting tools written in Perl.
+# Website:          http://jbrowse.org/
 # Tags:             Genomics
+# Provides:         jbrowse 1.11.6
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/jbrowse 1.11.6/.
 # Pull Cmd:         docker pull biodckrdev/jbrowse

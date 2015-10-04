@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         sga
 # Software Version: 0.10.13
-# Provides:         sga 0.10.13|bamtools 2.4.0|sparsehash 2.0.2|jemalloc 4.0.2|pysam 0.8.3|ruffus 2.6.3
+# Description:      de novo sequence assembler using string graphs
+# Website:          https://github.com/jts/sga
 # Tags:             Genomics
+# Provides:         sga 0.10.13|bamtools 2.4.0|sparsehash 2.0.2|jemalloc 4.0.2|pysam 0.8.3|ruffus 2.6.3
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/sga 0.10.13/.
 # Pull Cmd:         docker pull biodckrdev/sga
@@ -19,19 +21,6 @@ FROM biodckr/biodocker
 
 # Change user to root
 USER root
-
-RUN apt-get update && \
-    apt-get install -y \
-      automake      \
-      autotools-dev \
-      cmake         \
-      && \
-    apt-get clean && \
-    apt-get purge && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-
-
 
 ENV ZIP=sparsehash-2.0.2.tar.gz
 ENV URL=https://github.com/sparsehash/sparsehash/archive

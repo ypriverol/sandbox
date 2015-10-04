@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         bwa
 # Software Version: 0.7.12
-# Provides:         bwa kit 0.7.12
+# Description:      Burrow-Wheeler Aligner for pairwise alignment between DNA sequences
+# Website:          https://github.com/lh3/bwa|http://bio-bwa.sourceforge.net/
 # Tags:             Genomics
+# Provides:         bwa kit 0.7.12
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/bwa 0.7.12/.
 # Pull Cmd:         docker pull biodckrdev/bwa

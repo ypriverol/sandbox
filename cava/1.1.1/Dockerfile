@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         cava
 # Software Version: 1.1.1
-# Provides:         cava full 1.1.1|pysan 0.8.3
+# Description:      CAVA (Clinical Annotation of Variants) is a lightweight, fast and flexible Next Generation Sequencing (NGS) variant annotation tool
+# Website:          http://www.well.ox.ac.uk/cava
 # Tags:             Genomics
+# Provides:         cava full 1.1.1|pysan 0.8.3
 # Base Image:       biodckrdev/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/cava 1.1.1/.
 # Pull Cmd:         docker pull biodckrdev/cava

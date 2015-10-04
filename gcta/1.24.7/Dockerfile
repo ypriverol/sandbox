@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         gcta
 # Software Version: 1.24.7
-# Provides:         gcta 1.24.7
+# Description:      a tool for Genome-wide Complex Trait Analysis
+# Website:          http://cnsgenomics.com/software/gcta/index.html
 # Tags:             Genomics
+# Provides:         gcta 1.24.7
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/gcta 1.24.7/.
 # Pull Cmd:         docker pull biodckrdev/gcta

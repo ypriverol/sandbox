@@ -4,6 +4,8 @@
 # Version:          1
 # Software:         htslib
 # Software Version: 1.2.1
+# Description:      C library for high-throughput sequencing data formats
+# Website:          https://github.com/samtools/htslib
 # Provides:         htslib 1.2.1
 # Tags:             Genomics
 # Base Image:       biodckr/biodocker

@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         AllPathsLG
 # Software Version: 52488
-# Provides:         allpathslg 52488
+# Description:      whole‐genome shotgun assembler that can generate high‐quality genome assemblies using short reads
+# Website:          http://www.broadinstitute.org/software/allpaths-lg/blog/
 # Tags:             Genomics
+# Provides:         allpathslg 52488
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/allpathslg 52488/.
 # Pull Cmd:         docker pull biodckrdev/allpathslg

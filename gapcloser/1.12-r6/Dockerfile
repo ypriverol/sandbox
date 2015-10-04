@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         gapcloser
 # Software Version: 1.12-r6
-# Provides:         gapcloser 1.12-r6
+# Description:      a novel short-read assembly method that can build a de novo draft assembly for the human-sized genomes
+# Website:          http://soap.genomics.org.cn/gapcloser.html
 # Tags:             Genomics
+# Provides:         gapcloser 1.12-r6
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/gapcloser v1.12-r6/.
 # Pull Cmd:         docker pull biodckrdev/gapcloser

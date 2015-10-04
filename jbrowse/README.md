@@ -28,7 +28,6 @@ how to use
 software website
 ----------------
 `
-https://github.com/Bioinformaticsnl/jbrowse
 http://jbrowse.org/
 `
 
