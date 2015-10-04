@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         bamtools
 # Software Version: 2.4.0
-# Provides:         bamtools 2.4.0
+# Description:      C++ API & command-line toolkit for working with BAM data
+# Website:          https://github.com/pezmaster31/bamtools
 # Tags:             Genomics
+# Provides:         bamtools 2.4.0
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/bamtools 2.4.0/.
 # Pull Cmd:         docker pull biodckrdev/bamtools
@@ -19,15 +21,6 @@ FROM biodckr/biodocker
 
 # Change user to root
 USER root
-
-RUN apt-get update && \
-    apt-get install -y \
-      cmake && \
-    apt-get clean && \
-    apt-get purge && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-
 
 ENV ZIP=v2.4.0.tar.gz
 ENV URL=https://github.com/pezmaster31/bamtools/archive/

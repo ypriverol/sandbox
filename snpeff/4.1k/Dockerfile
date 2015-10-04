@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         snpeff
 # Software Version: 4.1k
-# Provides:         snpeff 4.1k
+# Description:      Genetic variant annotation and effect prediction toolbox
+# Website:          http://sourceforge.net/projects/snpeff/|http://snpeff.sourceforge.net/
 # Tags:             Genomics
+# Provides:         snpeff 4.1k
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/snpeff 4.1k/.
 # Pull Cmd:         docker pull biodckrdev/snpeff

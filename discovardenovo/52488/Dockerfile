@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         discovardenovo
 # Software Version: 52488
-# Provides:         discovardenovo 52488
+# Description:      Genome variant discovery through assembly
+# Website:          http://www.broadinstitute.org/software/discovar/blog/?page_id=19
 # Tags:             Genomics
+# Provides:         discovardenovo 52488
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/discovardenovo 52488/.
 # Pull Cmd:         docker pull biodckrdev/discovardenovo

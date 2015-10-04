@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         Samtools
 # Software Version: 1.2
-# Provides:         samtools 1.2
+# Description:      Tools (written in C using htslib) for manipulating next-generation sequencing data
+# Website:          https://github.com/samtools/samtools
 # Tags:             Genomics
+# Provides:         samtools 1.2
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/samtools 1.2/.
 # Pull Cmd:         docker pull biodckrdev/samtools

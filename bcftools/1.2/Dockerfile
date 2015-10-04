@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         Bcftools
 # Software Version: 1.2
-# Provides:         Bcftools 1.2
+# Description:      Bcftools is a program for variant calling and manipulating VCFs and BCFs
+# Website:          https://github.com/bcftools/bcftools
 # Tags:             Genomics
+# Provides:         Bcftools 1.2
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/bcftools 1.2/.
 # Pull Cmd:         docker pull biodckrdev/bcftools

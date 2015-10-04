@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         spades
 # Software Version: 3.6.0
-# Provides:         spades 3.6.0
+# Description:      Tools (written in C using htslib) for manipulating next-generation sequencing data
+# Website:          http://bioinf.spbau.ru/spades
 # Tags:             Genomics
+# Provides:         spades 3.6.0
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/spades 3.6.0/.
 # Pull Cmd:         docker pull biodckrdev/spades

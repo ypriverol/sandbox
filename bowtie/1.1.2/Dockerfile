@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         bowtie
 # Software Version: 1.1.2
-# Provides:         bowtie 1.1.2
+# Description:      An ultrafast memory-efficient short read aligner
+# Website:          http://bowtie-bio.sourceforge.net/index.shtml|https://github.com/BenLangmead/bowtie
 # Tags:             Genomics
+# Provides:         bowtie 1.1.2
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/bowtie 1.1.2/.
 # Pull Cmd:         docker pull biodckrdev/bowtie

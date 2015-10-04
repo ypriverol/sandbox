@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         abyss
 # Software Version: 1.9.0
-# Provides:         sparsehash 2.0.2|abyss 1.9.0
+# Description:      Assembly By Short Sequences - a de novo, parallel, paired-end sequence assembler
+# Website:          http://www.bcgsc.ca/platform/bioinfo/software/abyss|https://github.com/bcgsc/abyss/
 # Tags:             Genomics
+# Provides:         sparsehash 2.0.2|abyss 1.9.0
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/abyss 1.9.0/.
 # Pull Cmd:         docker pull biodckrdev/abyss

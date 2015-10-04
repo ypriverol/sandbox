@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         soapdenovo
 # Software Version: 240
-# Provides:         soapdenovo 240
+# Description:      a novel short-read assembly method that can build a de novo draft assembly for the human-sized genomes
+# Website:          http://soap.genomics.org.cn/soapdenovo.html
 # Tags:             Genomics
+# Provides:         soapdenovo 240
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/soapdenovo 240/.
 # Pull Cmd:         docker pull biodckrdev/soapdenovo

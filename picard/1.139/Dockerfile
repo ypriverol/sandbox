@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         picard
 # Software Version: 1.139
-# Provides:         picard 1.139
+# Description:      A set of Java command line tools for manipulating high-throughput sequencing (HTS) data and formats.
+# Website:          https://github.com/picard/picard
 # Tags:             Genomics
+# Provides:         picard 1.139
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/picard 1.139/.
 # Pull Cmd:         docker pull biodckrdev/picard

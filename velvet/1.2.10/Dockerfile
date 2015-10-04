@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         velvet
 # Software Version: 1.2.10
-# Provides:         velvet 1.2.10
+# Description:      Short read de novo assembler using de Bruijn graphs
+# Website:          http://www.ebi.ac.uk/~zerbino/velvet/|https://github.com/dzerbino/velvet
 # Tags:             Genomics
+# Provides:         velvet 1.2.10
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/velvet 1.2.10/.
 # Pull Cmd:         docker pull biodckrdev/velvet

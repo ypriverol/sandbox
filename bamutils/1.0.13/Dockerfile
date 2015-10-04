@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         bamutils
 # Software Version: 1.0.13
-# Provides:         bamutils 1.0.13
+# Description:      repository that contains several programs that perform operations on SAM/BAM files
+# Website:          http://genome.sph.umich.edu/wiki/BamUtil|https://github.com/statgen/bamUtil
 # Tags:             Genomics
+# Provides:         bamutils 1.0.13
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/bamutils 1.0.13/.
 # Pull Cmd:         docker pull biodckrdev/bamutils

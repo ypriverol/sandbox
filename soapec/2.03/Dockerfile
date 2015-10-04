@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         soapec
 # Software Version: 2.03
-# Provides:         soapec 2.03
+# Description:      a correction tool for SOAPdenovo
+# Website:          http://soap.genomics.org.cn/soapdenovo.html
 # Tags:             Genomics
+# Provides:         soapec 2.03
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/soapec 2.03/.
 # Pull Cmd:         docker pull biodckrdev/soapec

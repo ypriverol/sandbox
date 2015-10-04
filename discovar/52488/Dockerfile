@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         discovar
 # Software Version: 52488
-# Provides:         discovar 52488
+# Description:      DISCOVAR is a new variant caller
+# Website:          http://www.broadinstitute.org/software/discovar/blog/?page_id=19
 # Tags:             Genomics
+# Provides:         discovar 52488
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/discovar 52488/.
 # Pull Cmd:         docker pull biodckrdev/discovar

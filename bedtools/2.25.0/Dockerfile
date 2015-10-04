@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         Bedtools
 # Software Version: 2.25.0
-# Provides:         Bedtools 2.25.0
+# Description:      A powerful toolset for genome arithmetic
+# Website:          https://github.com/arq5x/bedtools2
 # Tags:             Genomics
+# Provides:         Bedtools 2.25.0
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/bedtools 2.25.0/.
 # Pull Cmd:         docker pull biodckrdev/bedtools

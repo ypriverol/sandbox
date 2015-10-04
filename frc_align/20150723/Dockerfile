@@ -4,8 +4,10 @@
 # Version:          1
 # Software:         frc_align
 # Software Version: 20150723
-# Provides:         frc_align 20150723
+# Description:      Computes FRC from SAM/BAM file and not from afg files
+# Website:          https://github.com/jts/frc_courve
 # Tags:             Genomics
+# Provides:         frc_align 20150723
 # Base Image:       biodckr/biodocker
 # Build Cmd:        docker build --rm -t biodckrdev/frc_align 20150723/.
 # Pull Cmd:         docker pull biodckrdev/frc_align
@@ -22,7 +24,6 @@ USER root
 
 RUN apt-get update && \
     apt-get install -y \
-      cmake            \
       libboost-all-dev \
     && \
     apt-get clean && \
