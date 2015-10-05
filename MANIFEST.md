@@ -1,0 +1,371 @@
+# ./abyss/1.9.0/Dockerfile
+ - Version:          1
+ - Software:         abyss
+ - Software Version: 1.9.0
+ - Description:      Assembly By Short Sequences - a de novo, parallel, paired-end sequence assembler
+ - Website:          http://www.bcgsc.ca/platform/bioinfo/software/abyss|https://github.com/bcgsc/abyss/
+ - Tags:             Genomics
+ - Provides:         sparsehash 2.0.2|abyss 1.9.0
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/abyss 1.9.0/.
+ - Pull Cmd:         docker pull biodckrdev/abyss
+ - Run Cmd:          docker run --rm -it biodckrdev/abyss <options> <files>
+# ./allpathslg/52488/Dockerfile
+ - Version:          1
+ - Software:         AllPathsLG
+ - Software Version: 52488
+ - Description:      whole‐genome shotgun assembler that can generate high‐quality genome assemblies using short reads
+ - Website:          http://www.broadinstitute.org/software/allpaths-lg/blog/
+ - Tags:             Genomics
+ - Provides:         allpathslg 52488
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/allpathslg 52488/.
+ - Pull Cmd:         docker pull biodckrdev/allpathslg
+ - Run Cmd:          docker run --rm -it biodckrdev/allpathslg <options> <files>
+# ./bamtools/2.4.0/Dockerfile
+ - Version:          1
+ - Software:         bamtools
+ - Software Version: 2.4.0
+ - Description:      C++ API & command-line toolkit for working with BAM data
+ - Website:          https://github.com/pezmaster31/bamtools
+ - Tags:             Genomics
+ - Provides:         bamtools 2.4.0
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/bamtools 2.4.0/.
+ - Pull Cmd:         docker pull biodckrdev/bamtools
+ - Run Cmd:          docker run --rm -it biodckrdev/bamtools <options> <files>
+# ./bamutils/1.0.13/Dockerfile
+ - Version:          1
+ - Software:         bamutils
+ - Software Version: 1.0.13
+ - Description:      repository that contains several programs that perform operations on SAM/BAM files
+ - Website:          http://genome.sph.umich.edu/wiki/BamUtil|https://github.com/statgen/bamUtil
+ - Tags:             Genomics
+ - Provides:         bamutils 1.0.13
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/bamutils 1.0.13/.
+ - Pull Cmd:         docker pull biodckrdev/bamutils
+ - Run Cmd:          docker run --rm -it biodckrdev/bamutils <options> <files>
+# ./bcftools/1.2/Dockerfile
+ - Version:          1
+ - Software:         Bcftools
+ - Software Version: 1.2
+ - Description:      Bcftools is a program for variant calling and manipulating VCFs and BCFs
+ - Website:          https://github.com/bcftools/bcftools
+ - Tags:             Genomics
+ - Provides:         Bcftools 1.2
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/bcftools 1.2/.
+ - Pull Cmd:         docker pull biodckrdev/bcftools
+ - Run Cmd:          docker run --rm -it biodckrdev/bcftools <options> <files>
+# ./bedtools/2.25.0/Dockerfile
+ - Version:          1
+ - Software:         Bedtools
+ - Software Version: 2.25.0
+ - Description:      A powerful toolset for genome arithmetic
+ - Website:          https://github.com/arq5x/bedtools2
+ - Tags:             Genomics
+ - Provides:         Bedtools 2.25.0
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/bedtools 2.25.0/.
+ - Pull Cmd:         docker pull biodckrdev/bedtools
+ - Run Cmd:          docker run --rm -it biodckrdev/bedtools <options> <files>
+# ./bior_annotate/2.1.1/Dockerfile
+ - Version:          1
+ - Software:         BioR annotate
+ - Software Version: 2.1.1
+ - Description:      BIOR (Biological Reference Repository) is a rapid, flexible system for genomic annotation. 
+ - Website:          http://www.well.ox.ac.uk/cava|https://github.com/Steven-N-Hart/bior_annotate|http://bioinformaticstools.mayo.edu/research/bior/|https://github.com/BioinformaticsToolsAtMayo|https://github.com/Steven-N-Hart/bior_annotate
+ - Tags:             Genomics
+ - Provides:         BioR 2.1.1|htslib 1.2.1|samtools 1.2|bedtools 2.25.0|pysam 0.8.3|cava full 1.1.1|snpEff 4.1k
+ - Base Image:       biodckrdev/bior_annotate
+ - Build Cmd:        docker build --rm -t biodckrdev/bior_annotate 2.1.1/.
+ - Pull Cmd:         docker pull biodckrdev/bior_annotate
+ - Run Cmd:          docker run --rm -it biodckrdev/bior_annotate bash
+ - Extra:            mkdir data
+ - Extra:            cd data
+ - Extra:            mkdir references
+ - Extra:            curl -o references/hg19.fa.gz ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz
+ - Extra:            gunzip references/hg19.fa.gz > references/hg19.fa
+ - Extra:            docker run -it --rm -v $PWD:/Data biodckrdev/bior_annotate bash
+ - Extra:            cd /data
+ - Extra:            samtools faidx references/hg19.fa
+ - Extra:            sh trunk/bior_annotate.sh -v HG00098.vcf.gz -c catalogFile.docker -d drillFile.docker -T tool_info.minimal.txt -o TEST  -M trunk/config/memory_info.txt -l
+ - Extra:            Note for windows, you will need to use
+ - Extra:            docker run -it --rm -v //c/UserS/m087494/Desktop/bior_annotate:/Data stevenhart/bior_annotate:latest
+ - Extra:            For this demo, make sure `pwd` contains the following elements
+ - Extra:            Data/
+ - Extra:              references/
+ - Extra:                hg19.fa.gz
+ - Extra:                hg19.fa.gz.fai
+ - Extra:            catalogs/
+ - Extra:              2015_05_18/
+ - Extra:                noTCGA_ExAc.datasource.properties
+ - Extra:                noTCGA_ExAc.columns.tsv
+ - Extra:                noTCGA_ExAc.tsv.bgz.tbi
+ - Extra:                noTCGA_ExAc.tsv.bgz
+# ./bowtie/1.1.2/Dockerfile
+ - Version:          1
+ - Software:         bowtie
+ - Software Version: 1.1.2
+ - Description:      An ultrafast memory-efficient short read aligner
+ - Website:          http://bowtie-bio.sourceforge.net/index.shtml|https://github.com/BenLangmead/bowtie
+ - Tags:             Genomics
+ - Provides:         bowtie 1.1.2
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/bowtie 1.1.2/.
+ - Pull Cmd:         docker pull biodckrdev/bowtie
+ - Run Cmd:          docker run --rm -it biodckrdev/bowtie <options> <files>
+# ./bwa/0.7.12/Dockerfile
+ - Version:          1
+ - Software:         bwa
+ - Software Version: 0.7.12
+ - Description:      Burrow-Wheeler Aligner for pairwise alignment between DNA sequences
+ - Website:          https://github.com/lh3/bwa|http://bio-bwa.sourceforge.net/
+ - Tags:             Genomics
+ - Provides:         bwa kit 0.7.12
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/bwa 0.7.12/.
+ - Pull Cmd:         docker pull biodckrdev/bwa
+ - Run Cmd:          docker run --rm -it biodckrdev/bwa <options> <files>
+# ./cava/1.1.1/Dockerfile
+ - Version:          1
+ - Software:         cava
+ - Software Version: 1.1.1
+ - Description:      CAVA (Clinical Annotation of Variants) is a lightweight, fast and flexible Next Generation Sequencing (NGS) variant annotation tool
+ - Website:          http://www.well.ox.ac.uk/cava
+ - Tags:             Genomics
+ - Provides:         cava full 1.1.1|pysan 0.8.3
+ - Base Image:       biodckrdev/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/cava 1.1.1/.
+ - Pull Cmd:         docker pull biodckrdev/cava
+ - Run Cmd:          docker run --rm -it biodckrdev/cava <options> <files>
+# ./discovar/52488/Dockerfile
+ - Version:          1
+ - Software:         discovar
+ - Software Version: 52488
+ - Description:      DISCOVAR is a new variant caller
+ - Website:          http://www.broadinstitute.org/software/discovar/blog/?page_id=19
+ - Tags:             Genomics
+ - Provides:         discovar 52488
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/discovar 52488/.
+ - Pull Cmd:         docker pull biodckrdev/discovar
+ - Run Cmd:          docker run --rm -it biodckrdev/discovar <options> <files>
+# ./discovardenovo/52488/Dockerfile
+ - Version:          1
+ - Software:         discovardenovo
+ - Software Version: 52488
+ - Description:      Genome variant discovery through assembly
+ - Website:          http://www.broadinstitute.org/software/discovar/blog/?page_id=19
+ - Tags:             Genomics
+ - Provides:         discovardenovo 52488
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/discovardenovo 52488/.
+ - Pull Cmd:         docker pull biodckrdev/discovardenovo
+ - Run Cmd:          docker run --rm -it biodckrdev/discovardenovo <options> <files>
+# ./frc_align/20150723/Dockerfile
+ - Version:          1
+ - Software:         frc_align
+ - Software Version: 20150723
+ - Description:      Computes FRC from SAM/BAM file and not from afg files
+ - Website:          https://github.com/jts/frc_courve
+ - Tags:             Genomics
+ - Provides:         frc_align 20150723
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/frc_align 20150723/.
+ - Pull Cmd:         docker pull biodckrdev/frc_align
+ - Run Cmd:          docker run --rm -it biodckrdev/frc_align <options> <files>
+# ./gapcloser/1.12-r6/Dockerfile
+ - Version:          1
+ - Software:         gapcloser
+ - Software Version: 1.12-r6
+ - Description:      a novel short-read assembly method that can build a de novo draft assembly for the human-sized genomes
+ - Website:          http://soap.genomics.org.cn/gapcloser.html
+ - Tags:             Genomics
+ - Provides:         gapcloser 1.12-r6
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/gapcloser v1.12-r6/.
+ - Pull Cmd:         docker pull biodckrdev/gapcloser
+ - Run Cmd:          docker run --rm -it biodckrdev/gapcloser <options> <files>
+# ./gatk/3.4/Dockerfile
+ - Version:          1
+ - Software:         GATK
+ - Software Version: 3.4
+ - Description:      The Genome Analysis Toolkit or GATK is a software package developed at the Broad Institute to analyze high-throughput sequencing data.
+ - Website:          https://www.broadinstitute.org/gatk/|https://github.com/broadgsa/gatk-protected/
+ - Tags:             Genomics
+ - Provides:         gatk 3.4|samtools 1.2|bwakit 0.7.12|picard tools 1.139
+ - Base Image:       java:7
+ - Build Cmd:        docker build --rm -t biodckrdev/gatk 3.4/.
+ - Pull Cmd:         docker pull biodckrdev/gatk
+ - Run Cmd:          docker run --rm -it biodckrdev/gatk <options> <files>
+# ./gcta/1.24.7/Dockerfile
+ - Version:          1
+ - Software:         gcta
+ - Software Version: 1.24.7
+ - Description:      a tool for Genome-wide Complex Trait Analysis
+ - Website:          http://cnsgenomics.com/software/gcta/index.html
+ - Tags:             Genomics
+ - Provides:         gcta 1.24.7
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/gcta 1.24.7/.
+ - Pull Cmd:         docker pull biodckrdev/gcta
+ - Run Cmd:          docker run --rm -it biodckrdev/gcta <options> <files>
+# ./htslib/1.2.1/Dockerfile
+ - Version:          1
+ - Software:         htslib
+ - Software Version: 1.2.1
+ - Description:      C library for high-throughput sequencing data formats
+ - Website:          https://github.com/samtools/htslib
+ - Provides:         htslib 1.2.1
+ - Tags:             Genomics
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/htslib 1.2.1/.
+ - Pull Cmd:         docker pull biodckrdev/htslib
+ - Run Cmd:          docker run --rm -it biodckrdev/htslib <options> <files>
+# ./jbrowse/1.11.6/Dockerfile
+ - Version:          1
+ - Software:         jbrowse
+ - Software Version: 1.11.6
+ - Description:      JBrowse is a fast, embeddable genome browser built completely with JavaScript and HTML5, with optional run-once data formatting tools written in Perl.
+ - Website:          http://jbrowse.org/
+ - Tags:             Genomics
+ - Provides:         jbrowse 1.11.6
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/jbrowse 1.11.6/.
+ - Pull Cmd:         docker pull biodckrdev/jbrowse
+ - Run Cmd:          docker run --rm -p 8000:8000 biodckrdev/jbrowse
+# ./jellyfish/2.2.3/Dockerfile
+ - Version:          1
+ - Software:         jellyfish
+ - Software Version: 2.2.3
+ - Description:      A fast multi-threaded k-mer counter
+ - Website:          https://github.com/gmarcais/Jellyfish
+ - Tags:             Genomics
+ - Provides:         jellyfish 2.2.3
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/jellyfish 2.2.3/.
+ - Pull Cmd:         docker pull biodckrdev/jellyfish
+ - Run Cmd:          docker run --rm -it biodckrdev/jellyfish <options> <files>
+# ./picard/1.139/Dockerfile
+ - Version:          1
+ - Software:         picard
+ - Software Version: 1.139
+ - Description:      A set of Java command line tools for manipulating high-throughput sequencing (HTS) data and formats.
+ - Website:          https://github.com/picard/picard
+ - Tags:             Genomics
+ - Provides:         picard 1.139
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/picard 1.139/.
+ - Pull Cmd:         docker pull biodckrdev/picard
+ - Run Cmd:          docker run --rm -it biodckrdev/picard <options> <files>
+# ./raremetalworker/4.13.7/Dockerfile
+ - Version:          1
+ - Software:         raremetalworker
+ - Software Version: 4.13.7
+ - Description:      single variant analysis, generating summary statistics for gene level meta analyses
+ - Website:          http://genome.sph.umich.edu/wiki/RAREMETALWORKER
+ - Tags:             Genomics
+ - Provides:         raremetalworker 4.13.7
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/raremetalworker 4.13.7/.
+ - Pull Cmd:         docker pull biodckrdev/raremetalworker
+ - Run Cmd:          docker run --rm -it biodckrdev/raremetalworker <options> <files>
+# ./samtools/1.2/Dockerfile
+ - Version:          1
+ - Software:         Samtools
+ - Software Version: 1.2
+ - Description:      Tools (written in C using htslib) for manipulating next-generation sequencing data
+ - Website:          https://github.com/samtools/samtools
+ - Tags:             Genomics
+ - Provides:         samtools 1.2
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/samtools 1.2/.
+ - Pull Cmd:         docker pull biodckrdev/samtools
+ - Run Cmd:          docker run --rm -it biodckrdev/samtools <options> <files>
+# ./sga/0.10.13/Dockerfile
+ - Version:          1
+ - Software:         sga
+ - Software Version: 0.10.13
+ - Description:      de novo sequence assembler using string graphs
+ - Website:          https://github.com/jts/sga
+ - Tags:             Genomics
+ - Provides:         sga 0.10.13|bamtools 2.4.0|sparsehash 2.0.2|jemalloc 4.0.2|pysam 0.8.3|ruffus 2.6.3
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/sga 0.10.13/.
+ - Pull Cmd:         docker pull biodckrdev/sga
+ - Run Cmd:          docker run --rm -it biodckrdev/sga <options> <files>
+# ./snpeff/4.1k/Dockerfile
+ - Version:          1
+ - Software:         snpeff
+ - Software Version: 4.1k
+ - Description:      Genetic variant annotation and effect prediction toolbox
+ - Website:          http://sourceforge.net/projects/snpeff/|http://snpeff.sourceforge.net/
+ - Tags:             Genomics
+ - Provides:         snpeff 4.1k
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/snpeff 4.1k/.
+ - Pull Cmd:         docker pull biodckrdev/snpeff
+ - Run Cmd:          docker run --rm -it biodckrdev/snpeff <options> <files>
+# ./soapdenovo/240/Dockerfile
+ - Version:          1
+ - Software:         soapdenovo
+ - Software Version: 240
+ - Description:      a novel short-read assembly method that can build a de novo draft assembly for the human-sized genomes
+ - Website:          http://soap.genomics.org.cn/soapdenovo.html
+ - Tags:             Genomics
+ - Provides:         soapdenovo 240
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/soapdenovo 240/.
+ - Pull Cmd:         docker pull biodckrdev/soapdenovo
+ - Run Cmd:          docker run --rm -it biodckrdev/soapdenovo <options> <files>
+# ./soapec/2.03/Dockerfile
+ - Version:          1
+ - Software:         soapec
+ - Software Version: 2.03
+ - Description:      a correction tool for SOAPdenovo
+ - Website:          http://soap.genomics.org.cn/soapdenovo.html
+ - Tags:             Genomics
+ - Provides:         soapec 2.03
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/soapec 2.03/.
+ - Pull Cmd:         docker pull biodckrdev/soapec
+ - Run Cmd:          docker run --rm -it biodckrdev/soapec <options> <files>
+# ./spades/3.6.0/Dockerfile
+ - Version:          1
+ - Software:         spades
+ - Software Version: 3.6.0
+ - Description:      Tools (written in C using htslib) for manipulating next-generation sequencing data
+ - Website:          http://bioinf.spbau.ru/spades
+ - Tags:             Genomics
+ - Provides:         spades 3.6.0
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/spades 3.6.0/.
+ - Pull Cmd:         docker pull biodckrdev/spades
+ - Run Cmd:          docker run --rm -it biodckrdev/spades <options> <files>
+# ./vcf-miner/4.0.1/Dockerfile
+# ./vcftools/0.1.14/Dockerfile
+ - Version:          1
+ - Software:         vcftools
+ - Software Version: 0.1.14
+ - Description:      A set of tools written in Perl and C++ for working with VCF files, such as those generated by the 1000 Genomes Project
+ - Website:          https://github.com/vcftools/vcftools|https://vcftools.github.io/index.html
+ - Tags:             Genomics
+ - Provides:         vcftools 0.1.14
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/vcftools 0.1.14/.
+ - Pull Cmd:         docker pull biodckrdev/vcftools
+ - Run Cmd:          docker run --rm -it biodckrdev/vcftools <options> <files>
+# ./velvet/1.2.10/Dockerfile
+ - Version:          1
+ - Software:         velvet
+ - Software Version: 1.2.10
+ - Description:      Short read de novo assembler using de Bruijn graphs
+ - Website:          http://www.ebi.ac.uk/~zerbino/velvet/|https://github.com/dzerbino/velvet
+ - Tags:             Genomics
+ - Provides:         velvet 1.2.10
+ - Base Image:       biodckr/biodocker
+ - Build Cmd:        docker build --rm -t biodckrdev/velvet 1.2.10/.
+ - Pull Cmd:         docker pull biodckrdev/velvet
+ - Run Cmd:          docker run --rm -it biodckrdev/velvet <options> <files>
