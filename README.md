@@ -1,4 +1,4 @@
-<img src="imgs/BioContainers.png" style="max-width: 50px;"/>
+<img src="https://github.com/BioContainers/specs/blob/master/imgs/BioContainers.png" style="max-width: 50px;"/>
 
 
 The latest information about BioContainers is available via [https://BioContainers.pro](https://Biocontainers.pro/) 
