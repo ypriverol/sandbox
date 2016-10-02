@@ -1,35 +1,29 @@
-BioDocker - Sandbox
-=========
+<img src="imgs/BioContainers.png" style="max-width: 50px;"/>
+
+
+The latest information about BioContainers is available via [https://BioContainers.pro](https://Biocontainers.pro/) 
+
 
 [![Join the chat at https://gitter.im/BioDocker/biodocker](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/BioDocker/biodocker?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-```
-___.   .__           .___             __                 
-\_ |__ |__| ____   __| _/____   ____ |  | __ ___________ 
- | __ \|  |/  _ \ / __ |/  _ \_/ ___\|  |/ // __ \_  __ \
- | \_\ \  (  <_> ) /_/ (  <_> )  \___|    <\  ___/|  | \/
- |___  /__|\____/\____ |\____/ \___  >__|_ \\___  >__|   
-     \/               \/           \/     \/    \/       
 
- ```
-
-Sandbox
+Containers
 --------
-Workplace for new or broken containers
+Repository of approved bioinformatics containers
 
 Links:
 -------
-Web Page              : http://biodocker.github.io/
+Web Page              : http://biocontainers.pro/
 
-Project Definition    : https://github.com/BioDocker/biodocker
+Project Definition    : https://github.com/BioContainers/specs
 
-Contribution Rules    : https://github.com/BioDocker/biodocker/blob/master/CONTRIBUTING.md
+Contribution Rules    : https://github.com/BioContainers/specs/blob/master/CONTRIBUTING.md
 
-Wiki of the project   : https://github.com/BioDocker/biodocker/wiki
+Wiki of the project   : https://github.com/BioContainers/specs/wiki
 
-Containers            : https://github.com/BioDocker/containers
+Containers            : https://github.com/BioContainers/containers
 
-Containers Development: https://github.com/BioDocker/sandbox
+Containers Development: https://github.com/BioContainers/sandbox
 
 Email                 : biodockers@gmail.com
 
