@@ -4,11 +4,11 @@ FROM biocontainers/bamtools:latest
 # Metadata
 LABEL base.image="bamtools:latest"
 LABEL version="3"
-LABEL software="TPMCalculator"
+LABEL software="DiffExpIR"
 LABEL software.version="0.0.1"
-LABEL description="This program calculates the TPM (Transcript per Millions) values for the exons and introns from NGS RNA-Seq aligned reads (BAM files)"
-LABEL website="https://github.com/r78v10a07/TPMCalculator"
-LABEL documentation="https://github.com/r78v10a07/TPMCalculator"
+LABEL description="Differentially expressed intron retention"
+LABEL website="https://github.com/r78v10a07/DiffExpIR"
+LABEL documentation="https://github.com/r78v10a07/DiffExpIR"
 LABEL license="http://www.gnu.org/licenses/"
 LABEL tags="RNA-seq"
 
@@ -17,8 +17,8 @@ MAINTAINER Roberto Vera Alvarez <r78v10a07@gmail.com>
 
 USER biodocker
 
-ENV URL=https://github.com/r78v10a07/TPMCalculator
-ENV FOLDER=TPMCalculator
+ENV URL=https://github.com/r78v10a07/DiffExpIR
+ENV FOLDER=DiffExpIR
 ENV DST=/tmp
 ENV BAMTOOLS_DIR=/home/biodocker
 ENV CPPFLAGS="-I $BAMTOOLS_DIR/include/bamtools"
@@ -33,4 +33,4 @@ RUN cd $DST && \
 
 WORKDIR /data/
 
-CMD ["TPMCalculator"]
+CMD ["diffexpIR"]
